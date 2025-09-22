@@ -13,6 +13,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/src/style.css" rel="stylesheet">
+  <!-- Eager load logos -->
+  <link rel="preload" as="image" href="/img/zap-logo.png">
+  <link rel="preload" as="image" href="/img/laravel-jutsu-logo.png">
 
     <!-- Primary Meta Tags -->
     <title>Ludovic Guénet — Laravel / Vue / Nuxt Engineer</title>
@@ -128,6 +131,23 @@
       <section class="mb-12" aria-labelledby="about-heading">
         <h2 id="about-heading" class="sr-only">About Me</h2>
         <p class="text-lg sm:text-xl leading-relaxed text-slate-700">I build reliable and blazing fast apps — focused on maintainability, testing and developer experience. I ship APIs with Laravel and fast frontends using Vue / Nuxt.</p>
+        <p class="text-lg sm:text-xl leading-relaxed text-slate-700 mt-4">
+          I created
+          <a href="https://www.zap-for-laravel.com/getting-started/introduction" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:2px;">Zap</a>
+          <img src="/img/zap-logo.png" alt="Zap Logo" style="display:inline;vertical-align:middle;width:1.5em;height:1.5em;margin:0 0.3em;" />,
+          a flexible, high-performance, developer-friendly calendar management system for Laravel.
+        </p>
+        <p class="text-lg sm:text-xl leading-relaxed text-slate-700 mt-2">
+          I also run
+          <a href="https://www.youtube.com/@LaravelJutsu" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:2px;">LaravelJutsu</a>
+          <img src="/img/laravel-jutsu-logo.png" alt="LaravelJutsu Logo" style="display:inline;vertical-align:middle;width:1.5em;height:1.5em;margin:0 0.3em;" />,
+          the first and leading YouTube reference for Laravel/PHP.
+        </p>
+      </section>
+
+      <!-- Creator & Reference Section -->
+      <p class="mt-6 text-sm text-slate-700">
+      <!-- ...existing code... -->
       </section>
 
       <!-- Skills -->

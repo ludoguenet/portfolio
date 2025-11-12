@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle focus styles */
+*:focus-visible {
+  outline: 2px solid rgb(203 213 225);
+  outline-offset: 2px;
+}
+
+/* Improved text rendering */
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

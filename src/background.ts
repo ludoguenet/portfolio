@@ -9,136 +9,55 @@ export function initBackground() {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   const scene = new THREE.Scene();
-  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
-  camera.position.z = 10;
+  // Use a perspective camera for the retro grid effect
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.set(0, 3, 10);
+  camera.lookAt(0, 0, 0);
 
-  // Geometry
-  const barSize = 0.12;
-  const thickness = 0.03;
-  const shape = new THREE.Shape();
-  const s = barSize / 2;
-  const t = thickness / 2;
-  shape.moveTo(-s, t);
-  shape.lineTo(-t, t);
-  shape.lineTo(-t, s);
-  shape.lineTo(t, s);
-  shape.lineTo(t, t);
-  shape.lineTo(s, t);
-  shape.lineTo(s, -t);
-  shape.lineTo(t, -t);
-  shape.lineTo(t, -s);
-  shape.lineTo(-t, -s);
-  shape.lineTo(-t, -t);
-  shape.lineTo(-s, -t);
-  shape.lineTo(-s, t);
-  const geometry = new THREE.ShapeGeometry(shape);
+  // Create the grid
+  const gridSize = 60;
+  const gridDivisions = 60;
+  // Using black for the grid lines to contrast with the white background
+  const gridHelper = new THREE.GridHelper(gridSize, gridDivisions, 0x000000, 0x000000);
+  scene.add(gridHelper);
 
-  const material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Base white, we tint with instance color
+  // Create a curved effect for the grid (optional, but adds to the "retro" feel)
+  // For a simple retro grid, a flat plane is often enough, but let's animate it.
 
-  let mesh: THREE.InstancedMesh;
-  const dummy = new THREE.Object3D();
-  const mouse = new THREE.Vector2(-1000, -1000);
+  // We'll actually create a custom grid using line segments to have more control if needed,
+  // but GridHelper is very efficient. Let's stick to GridHelper for now and animate it.
+  // To make it "infinite", we can move it towards the camera and reset.
 
-  // Colors
-  const black = new THREE.Color(0x0f172a);
-  const lime = new THREE.Color(0xbef264);
+  // Let's create two grids to loop them
+  const grid2 = new THREE.GridHelper(gridSize, gridDivisions, 0x000000, 0x000000);
+  grid2.position.z = -gridSize;
+  scene.add(grid2);
 
-  function createGrid() {
-    if (mesh) {
-      scene.remove(mesh);
-      mesh.dispose();
-    }
-
-    const aspect = window.innerWidth / window.innerHeight;
-    const frustumSize = 2;
-    const viewWidth = frustumSize * aspect;
-    const viewHeight = frustumSize;
-
-    camera.left = -viewWidth / 2;
-    camera.right = viewWidth / 2;
-    camera.top = viewHeight / 2;
-    camera.bottom = -viewHeight / 2;
-    camera.updateProjectionMatrix();
-
-    const spacing = 0.15;
-    const cols = Math.ceil(viewWidth / spacing) + 2;
-    const rows = Math.ceil(viewHeight / spacing) + 2;
-    const count = cols * rows;
-
-    mesh = new THREE.InstancedMesh(geometry, material, count);
-
-    let i = 0;
-    for (let x = 0; x < cols; x++) {
-      for (let y = 0; y < rows; y++) {
-        // Set random color
-        if (Math.random() > 0.95) {
-          mesh.setColorAt(i, lime);
-        } else {
-          mesh.setColorAt(i, black);
-        }
-        i++;
-      }
-    }
-
-    scene.add(mesh);
-  }
-
-  createGrid();
+  const speed = 2.5;
 
   window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    createGrid();
-  });
-
-  window.addEventListener('mousemove', (e) => {
-    const aspect = window.innerWidth / window.innerHeight;
-    mouse.x = (e.clientX / window.innerWidth) * 2 * aspect - aspect;
-    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
   });
 
   function animate() {
     requestAnimationFrame(animate);
-    if (!mesh) return;
 
-    const time = Date.now() * 0.001;
-    const aspect = window.innerWidth / window.innerHeight;
-    const frustumSize = 2;
-    const viewWidth = frustumSize * aspect;
-    const viewHeight = frustumSize;
-    const spacing = 0.15;
-    const cols = Math.ceil(viewWidth / spacing) + 2;
-    const rows = Math.ceil(viewHeight / spacing) + 2;
+    // const time = Date.now() * 0.001;
 
-    let i = 0;
-    for (let x = 0; x < cols; x++) {
-      for (let y = 0; y < rows; y++) {
-        const posX = (x - cols / 2) * spacing;
-        const posY = (y - rows / 2) * spacing;
+    // Move grids forward
+    gridHelper.position.z += speed * 0.01;
+    grid2.position.z += speed * 0.01;
 
-        const dist = Math.sqrt(Math.pow(posX - mouse.x, 2) + Math.pow(posY - mouse.y, 2));
-
-        let rotation = 0;
-        let scale = 1;
-
-        // Mouse interaction
-        if (dist < 0.6) {
-          rotation = (1 - dist / 0.6) * Math.PI;
-          scale = 1 + (1 - dist / 0.6) * 0.8;
-        }
-
-        // Idle wave
-        rotation += Math.sin(posX * 3 + time) * 0.1 + Math.cos(posY * 3 + time) * 0.1;
-
-        dummy.position.set(posX, posY, 0);
-        dummy.rotation.set(0, 0, rotation);
-        dummy.scale.set(scale, scale, 1);
-        dummy.updateMatrix();
-
-        mesh.setMatrixAt(i++, dummy.matrix);
-      }
+    // Reset position to create infinite loop
+    if (gridHelper.position.z >= gridSize) {
+      gridHelper.position.z = grid2.position.z - gridSize;
+    }
+    if (grid2.position.z >= gridSize) {
+      grid2.position.z = gridHelper.position.z - gridSize;
     }
 
-    mesh.instanceMatrix.needsUpdate = true;
     renderer.render(scene, camera);
   }
 

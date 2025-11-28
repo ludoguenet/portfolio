@@ -109,8 +109,10 @@
     }
     </script>
   </head>
-  <body class="antialiased bg-white text-slate-900 min-h-screen flex items-center overflow-x-hidden">
-    <main class="max-w-2xl mx-auto p-8 sm:p-12">
+  <body class="antialiased bg-lime-50 text-slate-900 min-h-screen flex items-center overflow-x-hidden relative">
+    <canvas id="bg-canvas" class="fixed inset-0 w-full h-full -z-10"></canvas>
+    <script type="module" src="/src/main.ts"></script>
+    <main class="max-w-2xl mx-auto p-8 sm:p-12 bg-white/80 backdrop-blur-md border-2 border-slate-900 shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] mt-12 mb-12">
       <!-- Header / Name -->
       <header class="mb-12">
         <div class="flex items-center gap-4">
@@ -118,8 +120,8 @@
             <img src="img/logo.svg" alt="Ludovic Guénet - Laravel Vue Nuxt Developer Logo" class="w-full h-full object-contain" width="48" height="48" />
           </div>
           <div>
-            <h1 class="text-2xl sm:text-3xl font-normal tracking-tight text-slate-900">Ludovic Guénet</h1>
-            <p class="text-sm text-slate-500 mt-1">Laravel • Vue • Nuxt</p>
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 uppercase">Ludovic Guénet</h1>
+            <p class="text-sm font-bold text-slate-900 mt-1 bg-lime-300 inline-block px-1 border border-slate-900 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">Laravel • Vue • Nuxt</p>
           </div>
         </div>
       </header>
@@ -127,78 +129,93 @@
       <!-- Quick pitch -->
       <section class="mb-12" aria-labelledby="about-heading">
         <h2 id="about-heading" class="sr-only">About Me</h2>
-        <p class="text-base sm:text-lg leading-relaxed text-slate-700 mb-6">I build reliable and fast apps — focused on maintainability, testing and developer experience. I ship APIs with Laravel and frontends using Vue / Nuxt.</p>
-        <div class="space-y-3 text-sm text-slate-600">
-          <p>
-            <a href="https://laravel-zap.com" target="_blank" rel="noopener noreferrer" class="text-slate-900 hover:text-slate-600">Zap</a>
-            <picture class="inline-block align-middle mx-1">
-              <source srcset="/img/optimized/zap-logo.webp" type="image/webp">
-              <img src="/img/zap-logo.png" alt="Zap Logo" width="27" height="27" class="inline-block align-middle size-6" />
-            </picture>
-            — Calendar management system for Laravel
-          </p>
-          <p>
-            <a href="https://github.com/ludoguenet/nuxt-biscuit" target="_blank" rel="noopener noreferrer" class="text-slate-900 hover:text-slate-600">Nuxt Biscuit</a>
-            <picture class="inline-block align-middle mx-1">
-              <img src="/img/optimized/nuxt-biscuit-logo.webp" alt="Nuxt Biscuit Logo" width="27" height="27" class="inline-block align-middle w-5 h-5" />
-            </picture>
-            — Laravel Sanctum authentication for Nuxt
-          </p>
-          <p>
-            <a href="https://www.youtube.com/@LaravelJutsu" target="_blank" rel="noopener noreferrer" class="text-slate-900 hover:text-slate-600">LaravelJutsu</a>
-            <picture class="inline-block align-middle mx-1">
-              <source srcset="/img/optimized/laravel-jutsu-logo.webp" type="image/webp">
-              <img src="/img/optimized/laravel-jutsu-logo-removebg-preview.png" alt="LaravelJutsu Logo" width="54" height="54" class="inline-block align-middle size-5" />
-            </picture>
-            — YouTube French reference for Laravel/PHP
-          </p>
-          <p>
-            <a href="https://laraconnect.fr" target="_blank" rel="noopener noreferrer" class="text-slate-900 hover:text-slate-600">LaraConnect</a>
-            <picture class="inline-block align-middle mx-1">
-              <source srcset="/img/optimized/laraconnect.webp" type="image/webp">
-              <img src="/img/optimized/laraconnect.webp" alt="LaraConnect Logo" width="27" height="27" class="inline-block align-middle w-5 h-5" />
-            </picture>
-            — Platform for Laravel developers
-          </p>
+        <p class="text-base sm:text-lg leading-relaxed text-slate-900 font-medium mb-6">I build reliable and fast apps — focused on maintainability, testing and developer experience. I ship APIs with Laravel and frontends using Vue / Nuxt.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- Zap -->
+          <a href="https://laravel-zap.com" target="_blank" rel="noopener noreferrer" class="group block bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-1 transition-all p-6">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-lg font-bold uppercase bg-lime-300 px-1 border border-slate-900 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">Zap</h3>
+              <picture>
+                <source srcset="/img/optimized/zap-logo.webp" type="image/webp">
+                <img src="/img/zap-logo.png" alt="Zap Logo" width="32" height="32" class="size-8 object-contain" />
+              </picture>
+            </div>
+            <p class="text-sm text-slate-700 font-medium leading-relaxed">Calendar management system for Laravel. Handle complex recurring events with ease.</p>
+          </a>
+
+          <!-- Nuxt Biscuit -->
+          <a href="https://github.com/ludoguenet/nuxt-biscuit" target="_blank" rel="noopener noreferrer" class="group block bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-1 transition-all p-6">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-lg font-bold uppercase bg-lime-300 px-1 border border-slate-900 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">Nuxt Biscuit</h3>
+              <picture>
+                <img src="/img/optimized/nuxt-biscuit-logo.webp" alt="Nuxt Biscuit Logo" width="32" height="32" class="size-8 object-contain" />
+              </picture>
+            </div>
+            <p class="text-sm text-slate-700 font-medium leading-relaxed">Laravel Sanctum authentication for Nuxt. Simple, secure, and ready for production.</p>
+          </a>
+
+          <!-- LaravelJutsu -->
+          <a href="https://www.youtube.com/@LaravelJutsu" target="_blank" rel="noopener noreferrer" class="group block bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-1 transition-all p-6">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-lg font-bold uppercase bg-lime-300 px-1 border border-slate-900 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">LaravelJutsu</h3>
+              <picture>
+                <source srcset="/img/optimized/laravel-jutsu-logo.webp" type="image/webp">
+                <img src="/img/optimized/laravel-jutsu-logo-removebg-preview.png" alt="LaravelJutsu Logo" width="32" height="32" class="size-8 object-contain" />
+              </picture>
+            </div>
+            <p class="text-sm text-slate-700 font-medium leading-relaxed">YouTube French reference for Laravel/PHP. Tutorials, tips, and live coding sessions.</p>
+          </a>
+
+          <!-- LaraConnect -->
+          <a href="https://laraconnect.fr" target="_blank" rel="noopener noreferrer" class="group block bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-1 transition-all p-6">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-lg font-bold uppercase bg-lime-300 px-1 border border-slate-900 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">LaraConnect</h3>
+              <picture>
+                <source srcset="/img/optimized/laraconnect.webp" type="image/webp">
+                <img src="/img/optimized/laraconnect.webp" alt="LaraConnect Logo" width="32" height="32" class="size-8 object-contain" />
+              </picture>
+            </div>
+            <p class="text-sm text-slate-700 font-medium leading-relaxed">Platform for Laravel developers. Connect, share, and grow with the community.</p>
+          </a>
         </div>
       </section>
 
       <!-- Footer -->
-      <footer class="mt-12 pt-8 border-t border-slate-200">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-slate-500">
+      <footer class="mt-12 pt-8 border-t-2 border-slate-900">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-slate-900 font-bold">
           <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-            <a href="mailto:ludo@epekta.com" class="hover:text-slate-900" rel="nofollow">ludo@epekta.com</a>
+            <a href="mailto:ludo@epekta.com" class="hover:bg-lime-300 px-1 -ml-1 transition-colors border border-transparent hover:border-slate-900 hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]" rel="nofollow">ludo@epekta.com</a>
             <span class="hidden sm:inline">•</span>
             <span>France</span>
           </div>
           <div class="flex items-center gap-2" role="list" aria-label="Social media links">
             <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/ludoguenet" class="p-1.5 hover:text-slate-900 transition-colors" aria-label="LinkedIn Profile - Ludovic Guénet" target="_blank" rel="noopener noreferrer" role="listitem">
-              <svg class="size-4 text-slate-500 hover:text-slate-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <a href="https://www.linkedin.com/in/ludoguenet" class="p-2 hover:bg-lime-300 transition-colors border border-transparent hover:border-slate-900 hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]" aria-label="LinkedIn Profile - Ludovic Guénet" target="_blank" rel="noopener noreferrer" role="listitem">
+              <svg class="size-5 text-slate-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
             <!-- GitHub -->
-            <a href="https://github.com/ludoguenet" class="p-1.5 hover:text-slate-900 transition-colors" aria-label="GitHub Profile - Ludovic Guénet" target="_blank" rel="noopener noreferrer" role="listitem">
-              <svg class="size-4 text-slate-500 hover:text-slate-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <a href="https://github.com/ludoguenet" class="p-2 hover:bg-lime-300 transition-colors border border-transparent hover:border-slate-900 hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]" aria-label="GitHub Profile - Ludovic Guénet" target="_blank" rel="noopener noreferrer" role="listitem">
+              <svg class="size-5 text-slate-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/@LaravelJutsu" class="p-1.5 hover:text-slate-900 transition-colors" aria-label="YouTube Channel - Laravel Jutsu" target="_blank" rel="noopener noreferrer" role="listitem">
-              <svg class="size-4 text-slate-500 hover:text-slate-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <a href="https://www.youtube.com/@LaravelJutsu" class="p-2 hover:bg-lime-300 transition-colors border border-transparent hover:border-slate-900 hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]" aria-label="YouTube Channel - Laravel Jutsu" target="_blank" rel="noopener noreferrer" role="listitem">
+              <svg class="size-5 text-slate-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
             </a>
             <!-- X (Twitter) -->
-            <a href="https://x.com/LudovicGuenet" class="p-1.5 hover:text-slate-900 transition-colors" aria-label="X (Twitter) Profile - Laravel Jutsu" target="_blank" rel="noopener noreferrer" role="listitem">
-              <svg class="size-4 text-slate-500 hover:text-slate-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <a href="https://x.com/LudovicGuenet" class="p-2 hover:bg-lime-300 transition-colors border border-transparent hover:border-slate-900 hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]" aria-label="X (Twitter) Profile - Laravel Jutsu" target="_blank" rel="noopener noreferrer" role="listitem">
+              <svg class="size-5 text-slate-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
           </div>
         </div>
-        <div class="mt-6 text-xs text-slate-400">
+        <div class="mt-6 text-xs text-slate-500 font-bold uppercase tracking-wider">
           © <span id="year"></span> Ludovic Guénet
         </div>
       </footer>

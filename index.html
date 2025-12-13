@@ -1,235 +1,130 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Favicons and App Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/src/style.css" rel="stylesheet">
-  <!-- Eager load logos -->
-  <link rel="preload" as="image" href="/img/zap-logo.png">
-  <link rel="preload" as="image" href="/img/laravel-jutsu-logo.png">
+  <title>Ludovic Guénet — Laravel / Vue / Nuxt Engineer</title>
+  <meta name="description" content="Laravel & Vue engineer building fast, maintainable, production-grade web applications." />
 
-    <!-- Primary Meta Tags -->
-    <title>Ludovic Guénet — Laravel / Vue / Nuxt Engineer</title>
-    <meta name="title" content="Ludovic Guénet — Laravel / Vue / Nuxt Engineer" />
-    <meta name="description" content="Expert Laravel & Vue.js developer specializing in reliable, fast web applications. PHP backend engineer and frontend specialist based in France. Building maintainable, tested code with Laravel, Vue, Nuxt, and TypeScript." />
-    <meta name="keywords" content="Laravel developer, Vue.js engineer, PHP developer, Nuxt.js, TypeScript, TDD, web development, backend engineer, frontend developer, France" />
-    <meta name="author" content="Ludovic Guénet" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ludovicguenet.dev" />
+  <link rel="icon" href="/favicon.ico" />
+  <link href="/src/style.css" rel="stylesheet" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ludovicguenet.dev" />
-    <meta property="og:title" content="Ludovic Guénet — Laravel / Vue / Nuxt Engineer" />
-    <meta property="og:description" content="Expert Laravel & Vue.js developer specializing in reliable, fast web applications. PHP backend engineer and frontend specialist based in France." />
-    <meta property="og:image" content="https://ludovicguenet.dev/twitter-card.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Ludovic Guénet Portfolio" />
-    <meta property="og:locale" content="en_US" />
+  <meta name="theme-color" content="#0b1220" />
+</head>
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://ludovicguenet.dev" />
-    <meta name="twitter:title" content="Ludovic Guénet — Laravel / Vue / Nuxt Engineer" />
-    <meta name="twitter:description" content="Expert Laravel & Vue.js developer specializing in reliable, fast web applications. PHP backend engineer and frontend specialist based in France." />
-    <meta name="twitter:image" content="https://ludovicguenet.dev/twitter-card.png" />
-    <meta name="twitter:creator" content="@LudovicGuenet" />
-    <meta name="twitter:site" content="@LudovicGuenet" />
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-slate-900 selection:text-white">
 
-    <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#0b1220" />
-    <meta name="msapplication-TileColor" content="#0b1220" />
-    <meta name="msapplication-TileImage" content="/android-chrome-192x192.png" />
-    <meta name="application-name" content="Ludovic Guénet Portfolio" />
+  <!-- Page container -->
+  <main class="max-w-4xl mx-auto px-6 py-16 space-y-20">
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ludovic Guénet",
-      "url": "https://ludovicguenet.dev",
-      "image": "https://ludovicguenet.dev/img/logo.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/ludoguenet",
-        "https://github.com/ludoguenet",
-        "https://www.youtube.com/@LaravelJutsu",
-        "https://x.com/LudovicGuenet"
-      ],
-      "jobTitle": "Laravel / Vue / Nuxt Engineer",
-      "description": "Expert Laravel & Vue.js developer specializing in reliable, fast web applications",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "FR",
-        "addressRegion": "France"
-      },
-      "email": "ludo@epekta.com",
-      "knowsAbout": [
-        "Laravel",
-        "PHP",
-        "Vue.js",
-        "Nuxt.js",
-        "TypeScript",
-        "Test Driven Development",
-        "MySQL",
-        "Web Development",
-        "Backend Development",
-        "Frontend Development"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Freelance"
-      }
-    }
-    </script>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://ludovicguenet.dev"
-        }
-      ]
-    }
-    </script>
-  </head>
-  <body class="antialiased bg-white text-slate-900">
-    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12">
-      <!-- Header / Name -->
-      <header class="space-y-4">
-        <img src="img/logo.svg" alt="Ludovic Guénet - Laravel Vue Nuxt Developer Logo" class="w-14 h-14" width="56" height="56" />
+    <!-- Hero -->
+    <header class="flex flex-col gap-8">
+      <div class="flex items-center gap-4">
+        <img src="/img/logo.svg" alt="Ludovic Guénet" class="w-14 h-14" />
         <div>
-          <h1 class="text-4xl font-semibold leading-tight">Ludovic Guénet</h1>
-          <p class="text-sm text-slate-600">Laravel • Vue • Nuxt</p>
+          <h1 class="text-4xl font-semibold tracking-tight">Ludovic Guénet</h1>
+          <p class="text-slate-600">Laravel · Vue · Nuxt</p>
         </div>
-      </header>
+      </div>
 
-      <!-- Quick pitch -->
-      <section class="space-y-4" aria-labelledby="about-heading">
-        <h2 id="about-heading" class="sr-only">About Me</h2>
-        <p class="text-lg leading-relaxed text-slate-700">
-          I build reliable and fast apps, with a focus on maintainability, testing, and developer experience.
-        </p>
+      <p class="text-xl leading-relaxed text-slate-700 max-w-2xl">
+        I design and build calm, reliable web applications.
+        Strong backend foundations, clean frontend architecture, and code meant to age well.
+      </p>
 
-        <div class="space-y-4">
-          <!-- Zap -->
-          <a href="https://laravel-zap.com" target="_blank" rel="noopener noreferrer" class="block border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-colors">
-            <div class="flex items-center justify-between gap-3">
-              <div>
-                <h3 class="text-lg font-semibold">Zap</h3>
-                <p class="text-sm text-slate-600">Calendar management for Laravel</p>
-              </div>
-              <span class="text-xs uppercase text-slate-500">Package</span>
-            </div>
-            <p class="text-sm text-slate-700 mt-3">Handle complex recurring events with ease.</p>
-          </a>
+      <div class="flex flex-wrap gap-4">
+        <a href="mailto:ludo@epekta.com" class="inline-flex items-center rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-800 transition">
+          Contact me
+        </a>
+        <a href="https://github.com/ludoguenet" target="_blank" class="inline-flex items-center rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-medium hover:border-slate-500 transition">
+          GitHub
+        </a>
+      </div>
+    </header>
 
-          <!-- Nuxt Biscuit -->
-          <a href="https://github.com/ludoguenet/nuxt-biscuit" target="_blank" rel="noopener noreferrer" class="block border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-colors">
-            <div class="flex items-center justify-between gap-3">
-              <div>
-                <h3 class="text-lg font-semibold">Nuxt Biscuit</h3>
-                <p class="text-sm text-slate-600">Sanctum auth for Nuxt</p>
-              </div>
-              <span class="text-xs uppercase text-slate-500">Package</span>
-            </div>
-            <p class="text-sm text-slate-700 mt-3">Simple, secure, and production-ready.</p>
-          </a>
+    <!-- Projects -->
+    <section class="space-y-8">
+      <h2 class="text-2xl font-semibold">Selected work</h2>
 
-          <!-- Laravel Artifact package -->
-          <a href="https://github.com/ludoguenet/laravel-artifact" target="_blank" rel="noopener noreferrer" class="block border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-colors">
-            <div class="flex items-center justify-between gap-3">
-              <div>
-                <h3 class="text-lg font-semibold">Laravel Artifact</h3>
-                <p class="text-sm text-slate-600">Media toolkit for Laravel</p>
-              </div>
-              <span class="text-xs uppercase text-slate-500">Package</span>
-            </div>
-            <p class="text-sm text-slate-700 mt-3">Uploads, conversions, and streamlined asset handling.</p>
-          </a>
+      <div class="grid sm:grid-cols-2 gap-6">
 
-          <!-- LaravelJutsu -->
-          <a href="https://www.youtube.com/@LaravelJutsu" target="_blank" rel="noopener noreferrer" class="block border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-colors">
-            <div class="flex items-center justify-between gap-3">
-              <div>
-                <h3 class="text-lg font-semibold">Laravel Jutsu</h3>
-                <p class="text-sm text-slate-600">French Laravel/PHP reference</p>
-              </div>
-              <span class="text-xs uppercase text-slate-500">YouTube</span>
-            </div>
-            <p class="text-sm text-slate-700 mt-3">Tutorials, tips, and live coding sessions.</p>
-          </a>
-
-          <!-- LaraConnect -->
-          <a href="https://laraconnect.fr" target="_blank" rel="noopener noreferrer" class="block border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-colors">
-            <div class="flex items-center justify-between gap-3">
-              <div>
-                <h3 class="text-lg font-semibold">LaraConnect</h3>
-                <p class="text-sm text-slate-600">Platform for Laravel developers</p>
-              </div>
-              <span class="text-xs uppercase text-slate-500">Community</span>
-            </div>
-            <p class="text-sm text-slate-700 mt-3">Connect, share, and grow with the community.</p>
-          </a>
-
-          <!-- Tailwind Ninja VS Code Theme -->
-          <a href="https://marketplace.visualstudio.com/items?itemName=LudovicGuenet.tailwind-ninja-theme" target="_blank" rel="noopener noreferrer" class="block border border-slate-200 rounded-xl p-5 hover:border-slate-400 transition-colors">
-            <div class="flex items-center justify-between gap-3">
-              <div>
-                <h3 class="text-lg font-semibold">Tailwind Ninja</h3>
-                <p class="text-sm text-slate-600">Vibrant VS Code theme</p>
-              </div>
-              <span class="text-xs uppercase text-slate-500">VS Code</span>
-            </div>
-            <p class="text-sm text-slate-700 mt-3">Sharp contrast and clean syntax highlighting.</p>
-          </a>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="pt-8 border-t border-slate-200">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-slate-700">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-            <a href="mailto:ludo@epekta.com" class="underline underline-offset-4 decoration-slate-400 hover:text-slate-900" rel="nofollow">ludo@epekta.com</a>
-            <span class="hidden sm:inline">•</span>
-            <span>France</span>
+        <!-- Project card -->
+        <a href="https://laravel-zap.com" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold group-hover:underline">Zap</h3>
+            <span class="text-xs uppercase tracking-wide text-slate-500">Laravel package</span>
           </div>
-          <div class="flex items-center gap-3" role="list" aria-label="Social media links">
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/ludoguenet" class="text-slate-700 hover:text-slate-900" aria-label="LinkedIn Profile - Ludovic Guénet" target="_blank" rel="noopener noreferrer" role="listitem">LinkedIn</a>
-            <!-- GitHub -->
-            <a href="https://github.com/ludoguenet" class="text-slate-700 hover:text-slate-900" aria-label="GitHub Profile - Ludovic Guénet" target="_blank" rel="noopener noreferrer" role="listitem">GitHub</a>
-            <!-- YouTube -->
-            <a href="https://www.youtube.com/@LaravelJutsu" class="text-slate-700 hover:text-slate-900" aria-label="YouTube Channel - Laravel Jutsu" target="_blank" rel="noopener noreferrer" role="listitem">YouTube</a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/LudovicGuenet" class="text-slate-700 hover:text-slate-900" aria-label="X (Twitter) Profile - Laravel Jutsu" target="_blank" rel="noopener noreferrer" role="listitem">X</a>
-          </div>
-        </div>
-        <div class="mt-6 text-xs text-slate-500">
-          © <span id="year"></span> Ludovic Guénet
-        </div>
-      </footer>
-    </main>
+          <p class="mt-3 text-sm text-slate-700">Advanced calendar & recurring event management for Laravel.</p>
+        </a>
 
-    <script>
-      // Set current year
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </body>
+        <a href="https://github.com/ludoguenet/nuxt-biscuit" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold group-hover:underline">Nuxt Biscuit</h3>
+            <span class="text-xs uppercase tracking-wide text-slate-500">Auth</span>
+          </div>
+          <p class="mt-3 text-sm text-slate-700">Production-ready Sanctum authentication for Nuxt.</p>
+        </a>
+
+        <a href="https://github.com/ludoguenet/laravel-artifact" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold group-hover:underline">Laravel Artifact</h3>
+            <span class="text-xs uppercase tracking-wide text-slate-500">Media</span>
+          </div>
+          <p class="mt-3 text-sm text-slate-700">A pragmatic media toolkit for uploads, conversions, and assets.</p>
+        </a>
+
+        <a href="https://www.youtube.com/@LaravelJutsu" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold group-hover:underline">Laravel Jutsu</h3>
+            <span class="text-xs uppercase tracking-wide text-slate-500">YouTube</span>
+          </div>
+          <p class="mt-3 text-sm text-slate-700">French Laravel tutorials, architecture, and live coding.</p>
+        </a>
+
+        <a href="https://laraconnect.fr" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold group-hover:underline">LaraConnect</h3>
+            <span class="text-xs uppercase tracking-wide text-slate-500">Community</span>
+          </div>
+          <p class="mt-3 text-sm text-slate-700">A platform to connect and grow with Laravel developers.</p>
+        </a>
+
+        <a href="https://marketplace.visualstudio.com/items?itemName=LudovicGuenet.tailwind-ninja-theme" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold group-hover:underline">Tailwind Ninja</h3>
+            <span class="text-xs uppercase tracking-wide text-slate-500">VS Code</span>
+          </div>
+          <p class="mt-3 text-sm text-slate-700">High-contrast, distraction-free editor theme.</p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Principles -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-semibold">How I work</h2>
+      <ul class="grid sm:grid-cols-3 gap-6 text-sm text-slate-700">
+        <li class="rounded-xl border border-slate-200 bg-white p-5">Clear architecture over clever tricks</li>
+        <li class="rounded-xl border border-slate-200 bg-white p-5">Tests where they pay rent</li>
+        <li class="rounded-xl border border-slate-200 bg-white p-5">APIs and UIs designed together</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-12 border-t border-slate-200 text-sm text-slate-600 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
+      <div class="flex items-center gap-4">
+        <a href="mailto:ludo@epekta.com" class="hover:text-slate-900 underline underline-offset-4">ludo@epekta.com</a>
+        <span>France</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/ludoguenet" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/ludoguenet" target="_blank">LinkedIn</a>
+        <a href="https://x.com/LudovicGuenet" target="_blank">X</a>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
 </html>

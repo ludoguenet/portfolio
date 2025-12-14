@@ -11,116 +11,212 @@
   <link href="/src/style.css" rel="stylesheet" />
 
   <meta name="theme-color" content="#0b1220" />
+  
+  <style>
+    /* Section fade-in animations */
+    @media (prefers-reduced-motion: no-preference) {
+      header { animation: fadeInUp 0.6s ease-out 0.1s both; }
+      section:nth-of-type(1) { animation: fadeInUp 0.6s ease-out 0.2s both; }
+      section:nth-of-type(2) { animation: fadeInUp 0.6s ease-out 0.3s both; }
+      footer { animation: fadeInUp 0.6s ease-out 0.4s both; }
+    }
+  </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 antialiased selection:bg-slate-900 selection:text-white">
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-slate-900 selection:text-white relative min-h-screen">
 
-  <!-- Page container -->
-  <main class="max-w-4xl mx-auto px-6 py-16 space-y-20">
+  <!-- Diagonal Cross Grid Pattern Background -->
+  <div class="absolute inset-0 pointer-events-none opacity-60" style="background-image: linear-gradient(45deg, transparent 49%, rgb(203 213 225 / 0.5) 49%, rgb(203 213 225 / 0.5) 51%, transparent 51%), linear-gradient(-45deg, transparent 49%, rgb(203 213 225 / 0.5) 49%, rgb(203 213 225 / 0.5) 51%, transparent 51%); background-size: 40px 40px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%); mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%);"></div>
+
+  <main class="max-w-3xl mx-auto px-6 py-12 relative z-10">
 
     <!-- Hero -->
-    <header class="flex flex-col gap-8">
-      <div class="flex items-center gap-4">
-        <img src="/img/logo.svg" alt="Ludovic Guénet" class="w-14 h-14" />
+    <header class="flex flex-col gap-8 mb-24">
+      <div class="flex items-center gap-5">
+        <img src="/img/logo.svg" alt="Ludovic Guénet" class="w-12 h-12" />
         <div>
-          <h1 class="text-4xl font-semibold tracking-tight">Ludovic Guénet</h1>
-          <p class="text-slate-600">Laravel · Vue · Nuxt</p>
+          <h1 class="text-3xl font-medium tracking-tight leading-tight">Ludovic Guénet</h1>
+          <p class="mt-1 text-sm tracking-wide text-slate-500 uppercase">Laravel · Vue · Nuxt</p>
         </div>
       </div>
 
-      <p class="text-xl leading-relaxed text-slate-700 max-w-2xl">
-        I design and build calm, reliable web applications.
-        Strong backend foundations, clean frontend architecture, and code meant to age well.
-      </p>
+      <div class="space-y-4 max-w-2xl">
+        <p class="text-lg leading-relaxed tracking-tight text-slate-800">
+          I design and build calm, reliable web applications.
+          Strong backend foundations, clean frontend architecture, and code meant to age well.
+        </p>
+        <p class="text-sm text-slate-500">
+          I value boring solutions, explicit systems, and software that doesn’t wake anyone up at night.
+        </p>
+      </div>
 
-      <div class="flex flex-wrap gap-4">
-        <a href="mailto:ludo@epekta.com" class="inline-flex items-center rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-800 transition">
+      <div class="flex flex-wrap gap-3">
+        <a href="mailto:ludo@epekta.com" class="inline-flex items-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 transition-colors">
           Contact me
         </a>
-        <a href="https://github.com/ludoguenet" target="_blank" class="inline-flex items-center rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-medium hover:border-slate-500 transition">
+        <a href="https://github.com/ludoguenet" target="_blank" class="inline-flex items-center rounded-md border border-slate-300/60 px-4 py-2 text-sm font-medium text-slate-700 hover:border-slate-400/80 hover:text-slate-900 transition-colors">
           GitHub
         </a>
       </div>
     </header>
 
     <!-- Projects -->
-    <section class="space-y-8">
-      <h2 class="text-2xl font-semibold">Selected work</h2>
+    <section class="space-y-8 mb-24">
+      <h2 class="text-xl font-medium tracking-[-0.02em] text-slate-900 flex items-center gap-2.5">
+        <svg class="w-5 h-5 text-[var(--color-accent)] transition-transform duration-300 hover:rotate-90" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+        Selected work
+      </h2>
 
-      <div class="grid sm:grid-cols-2 gap-6">
+      <div class="grid sm:grid-cols-2 gap-4">
 
-        <!-- Project card -->
-        <a href="https://laravel-zap.com" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold group-hover:underline">Zap</h3>
-            <span class="text-xs uppercase tracking-wide text-slate-500">Laravel package</span>
+        <a href="https://laravel-zap.com" target="_blank" class="group card-lift card-glow block rounded-md border border-slate-200/60 bg-white/80 backdrop-blur-sm p-4 hover:border-[var(--color-accent)]/40 transition-all duration-300 shadow-sm hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-base font-medium tracking-[-0.01em] text-slate-900 group-hover:text-[var(--color-accent)] flex items-center gap-2 transition-colors duration-300">
+              <svg class="w-4 h-4 text-slate-400 group-hover:text-[var(--color-accent)] transition-all duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+              </svg>
+              Zap
+            </h3>
+            <span class="text-xs uppercase tracking-wider text-slate-400 font-medium">Laravel package</span>
           </div>
-          <p class="mt-3 text-sm text-slate-700">Advanced calendar & recurring event management for Laravel.</p>
+          <p class="text-sm leading-relaxed text-slate-700">Advanced calendar & recurring event management for Laravel.</p>
+          <p class="mt-1.5 text-xs leading-relaxed text-slate-500">Built to tame time-based complexity without clever hacks.</p>
         </a>
 
-        <a href="https://github.com/ludoguenet/nuxt-biscuit" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold group-hover:underline">Nuxt Biscuit</h3>
-            <span class="text-xs uppercase tracking-wide text-slate-500">Auth</span>
+        <a href="https://github.com/ludoguenet/nuxt-biscuit" target="_blank" class="group card-lift card-glow block rounded-md border border-slate-200/60 bg-white/80 backdrop-blur-sm p-4 hover:border-[var(--color-accent)]/40 transition-all duration-300 shadow-sm hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-base font-medium tracking-[-0.01em] text-slate-900 group-hover:text-[var(--color-accent)] flex items-center gap-2 transition-colors duration-300">
+              <svg class="w-4 h-4 text-slate-400 group-hover:text-[var(--color-accent)] transition-all duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+              </svg>
+              Nuxt Biscuit
+            </h3>
+            <span class="text-xs uppercase tracking-wider text-slate-400 font-medium">Auth</span>
           </div>
-          <p class="mt-3 text-sm text-slate-700">Production-ready Sanctum authentication for Nuxt.</p>
+          <p class="text-sm leading-relaxed text-slate-700">Production-ready Sanctum authentication for Nuxt.</p>
+          <p class="mt-1.5 text-xs leading-relaxed text-slate-500">Opinionated defaults to avoid auth-by-copy-paste.</p>
         </a>
 
-        <a href="https://github.com/ludoguenet/laravel-artifact" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold group-hover:underline">Laravel Artifact</h3>
-            <span class="text-xs uppercase tracking-wide text-slate-500">Media</span>
+        <a href="https://github.com/ludoguenet/laravel-artifact" target="_blank" class="group card-lift card-glow block rounded-md border border-slate-200/60 bg-white/80 backdrop-blur-sm p-4 hover:border-[var(--color-accent)]/40 transition-all duration-300 shadow-sm hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-base font-medium tracking-[-0.01em] text-slate-900 group-hover:text-[var(--color-accent)] flex items-center gap-2 transition-colors duration-300">
+              <svg class="w-4 h-4 text-slate-400 group-hover:text-[var(--color-accent)] transition-all duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+              </svg>
+              Laravel Artifact
+            </h3>
+            <span class="text-xs uppercase tracking-wider text-slate-400 font-medium">Media</span>
           </div>
-          <p class="mt-3 text-sm text-slate-700">A pragmatic media toolkit for uploads, conversions, and assets.</p>
+          <p class="text-sm leading-relaxed text-slate-700">A pragmatic media toolkit for uploads, conversions, and assets.</p>
+          <p class="mt-1.5 text-xs leading-relaxed text-slate-500">Designed around explicit flows and predictable storage.</p>
         </a>
 
-        <a href="https://www.youtube.com/@LaravelJutsu" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold group-hover:underline">Laravel Jutsu</h3>
-            <span class="text-xs uppercase tracking-wide text-slate-500">YouTube</span>
+        <a href="https://www.youtube.com/@LaravelJutsu" target="_blank" class="group card-lift card-glow block rounded-md border border-slate-200/60 bg-white/80 backdrop-blur-sm p-4 hover:border-[var(--color-accent)]/40 transition-all duration-300 shadow-sm hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-base font-medium tracking-[-0.01em] text-slate-900 group-hover:text-[var(--color-accent)] flex items-center gap-2 transition-colors duration-300">
+              <svg class="w-4 h-4 text-slate-400 group-hover:text-[var(--color-accent)] transition-all duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+              </svg>
+              Laravel Jutsu
+            </h3>
+            <span class="text-xs uppercase tracking-wider text-slate-400 font-medium">YouTube</span>
           </div>
-          <p class="mt-3 text-sm text-slate-700">French Laravel tutorials, architecture, and live coding.</p>
+          <p class="text-sm leading-relaxed text-slate-700">French Laravel tutorials, architecture, and live coding.</p>
+          <p class="mt-1.5 text-xs leading-relaxed text-slate-500">Teaching by building real things, slowly and clearly.</p>
         </a>
 
-        <a href="https://laraconnect.fr" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold group-hover:underline">LaraConnect</h3>
-            <span class="text-xs uppercase tracking-wide text-slate-500">Community</span>
+        <a href="https://laraconnect.fr" target="_blank" class="group card-lift card-glow block rounded-md border border-slate-200/60 bg-white/80 backdrop-blur-sm p-4 hover:border-[var(--color-accent)]/40 transition-all duration-300 shadow-sm hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-base font-medium tracking-[-0.01em] text-slate-900 group-hover:text-[var(--color-accent)] flex items-center gap-2 transition-colors duration-300">
+              <svg class="w-4 h-4 text-slate-400 group-hover:text-[var(--color-accent)] transition-all duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+              </svg>
+              LaraConnect
+            </h3>
+            <span class="text-xs uppercase tracking-wider text-slate-400 font-medium">Community</span>
           </div>
-          <p class="mt-3 text-sm text-slate-700">A platform to connect and grow with Laravel developers.</p>
+          <p class="text-sm leading-relaxed text-slate-700">A platform to connect and grow with Laravel developers.</p>
+          <p class="mt-1.5 text-xs leading-relaxed text-slate-500">Focused on signal over noise.</p>
         </a>
 
-        <a href="https://marketplace.visualstudio.com/items?itemName=LudovicGuenet.tailwind-ninja-theme" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-400 transition">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold group-hover:underline">Tailwind Ninja</h3>
-            <span class="text-xs uppercase tracking-wide text-slate-500">VS Code</span>
+        <a href="https://marketplace.visualstudio.com/items?itemName=LudovicGuenet.tailwind-ninja-theme" target="_blank" class="group card-lift card-glow block rounded-md border border-slate-200/60 bg-white/80 backdrop-blur-sm p-4 hover:border-[var(--color-accent)]/40 transition-all duration-300 shadow-sm hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-base font-medium tracking-[-0.01em] text-slate-900 group-hover:text-[var(--color-accent)] flex items-center gap-2 transition-colors duration-300">
+              <svg class="w-4 h-4 text-slate-400 group-hover:text-[var(--color-accent)] transition-all duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+              </svg>
+              Tailwind Ninja
+            </h3>
+            <span class="text-xs uppercase tracking-wider text-slate-400 font-medium">VS Code</span>
           </div>
-          <p class="mt-3 text-sm text-slate-700">High-contrast, distraction-free editor theme.</p>
+          <p class="text-sm leading-relaxed text-slate-700">High-contrast, distraction-free editor theme.</p>
+          <p class="mt-1.5 text-xs leading-relaxed text-slate-500">Because tooling should disappear while you think.</p>
         </a>
 
       </div>
     </section>
 
     <!-- Principles -->
-    <section class="space-y-6">
-      <h2 class="text-2xl font-semibold">How I work</h2>
-      <ul class="grid sm:grid-cols-3 gap-6 text-sm text-slate-700">
-        <li class="rounded-xl border border-slate-200 bg-white p-5">Clear architecture over clever tricks</li>
-        <li class="rounded-xl border border-slate-200 bg-white p-5">Tests where they pay rent</li>
-        <li class="rounded-xl border border-slate-200 bg-white p-5">APIs and UIs designed together</li>
+    <section class="space-y-6 mb-12">
+      <div class="flex items-center gap-3">
+        <svg class="w-5 h-5 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+        </svg>
+        <h2 class="text-xl font-medium tracking-[-0.02em] text-slate-900">How I work</h2>
+        <div class="flex-1 h-px bg-gradient-to-r from-slate-200/60 to-transparent"></div>
+      </div>
+      <ul class="grid sm:grid-cols-3 gap-3">
+        <li class="group card-lift card-glow relative rounded-md border border-slate-200/60 bg-white/80 backdrop-blur-sm p-4 hover:border-[var(--color-accent)]/40 transition-all duration-300 shadow-sm hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2">
+          <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+            <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+            </svg>
+          </div>
+          <p class="text-sm leading-relaxed text-slate-700 pr-6">Prefer explicit architecture over clever abstractions</p>
+        </li>
+        <li class="group card-lift card-glow relative rounded-md border border-slate-200/60 bg-white/80 backdrop-blur-sm p-4 hover:border-[var(--color-accent)]/40 transition-all duration-300 shadow-sm hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2">
+          <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+            <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+            </svg>
+          </div>
+          <p class="text-sm leading-relaxed text-slate-700 pr-6">Write tests where failure would actually hurt</p>
+        </li>
+        <li class="group card-lift card-glow relative rounded-md border border-slate-200/60 bg-white/80 backdrop-blur-sm p-4 hover:border-[var(--color-accent)]/40 transition-all duration-300 shadow-sm hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2">
+          <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+            <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+            </svg>
+          </div>
+          <p class="text-sm leading-relaxed text-slate-700 pr-6">Design APIs and UIs as one system</p>
+        </li>
       </ul>
     </section>
 
     <!-- Footer -->
-    <footer class="pt-12 border-t border-slate-200 text-sm text-slate-600 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
-      <div class="flex items-center gap-4">
-        <a href="mailto:ludo@epekta.com" class="hover:text-slate-900 underline underline-offset-4">ludo@epekta.com</a>
+    <footer class="pt-12 border-t border-slate-200/60 text-sm text-slate-600 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between mt-24">
+      <div class="flex items-center gap-3">
+        <a href="mailto:ludo@epekta.com" class="hover:text-[var(--color-accent)] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-2 rounded">
+          ludo@epekta.com
+        </a>
+        <span class="text-slate-400">·</span>
         <span>France</span>
+        <span class="text-slate-400">·</span>
+        <span class="text-slate-400">Updated 2025</span>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="https://github.com/ludoguenet" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/ludoguenet" target="_blank">LinkedIn</a>
-        <a href="https://x.com/LudovicGuenet" target="_blank">X</a>
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/ludoguenet" target="_blank" class="hover:text-[var(--color-accent)] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-2 rounded">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/ludoguenet" target="_blank" class="hover:text-[var(--color-accent)] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-2 rounded">
+          LinkedIn
+        </a>
+        <a href="https://x.com/LudovicGuenet" target="_blank" class="hover:text-[var(--color-accent)] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-[var(--color-accent)] focus-visible:outline-offset-2 rounded">
+          X
+        </a>
       </div>
     </footer>
 

@@ -10,54 +10,83 @@
   <link rel="icon" href="/favicon.ico" />
   <link href="/src/style.css" rel="stylesheet" />
 
-  <meta name="theme-color" content="#f0fdfa" />
+  <meta name="theme-color" content="#fafaf9" />
 </head>
 
-<body class="text-slate-800 antialiased selection:bg-teal-600 selection:text-white">
+<body class="text-stone-900 antialiased selection:bg-stone-900 selection:text-white">
 
-  <div class="min-h-screen w-full bg-[#f0fdfa] relative">
-    <!-- Mint Fresh Breeze Background -->
+  <div class="min-h-screen w-full bg-[#fafaf9] relative">
+    <!-- Dashed Top Fade Grid -->
     <div
-      class="absolute inset-0 z-0 pointer-events-none"
+      class="absolute inset-0 z-0"
       style="background-image:
-        linear-gradient(45deg, 
-          rgba(240,253,250,1) 0%, 
-          rgba(204,251,241,0.7) 30%, 
-          rgba(153,246,228,0.5) 60%, 
-          rgba(94,234,212,0.4) 100%
-        ),
-        radial-gradient(circle at 40% 30%, rgba(255,255,255,0.8) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(167,243,208,0.5) 0%, transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(209,250,229,0.6) 0%, transparent 45%);"
+        linear-gradient(to right, #e7e5e4 1px, transparent 1px),
+        linear-gradient(to bottom, #e7e5e4 1px, transparent 1px);
+        background-size: 20px 20px;
+        background-position: 0 0, 0 0;
+        mask-image:
+          repeating-linear-gradient(
+            to right,
+            black 0px,
+            black 3px,
+            transparent 3px,
+            transparent 8px
+          ),
+          repeating-linear-gradient(
+            to bottom,
+            black 0px,
+            black 3px,
+            transparent 3px,
+            transparent 8px
+          ),
+          radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%);
+        -webkit-mask-image:
+          repeating-linear-gradient(
+            to right,
+            black 0px,
+            black 3px,
+            transparent 3px,
+            transparent 8px
+          ),
+          repeating-linear-gradient(
+            to bottom,
+            black 0px,
+            black 3px,
+            transparent 3px,
+            transparent 8px
+          ),
+          radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%);
+        mask-composite: intersect;
+        -webkit-mask-composite: source-in;"
     ></div>
 
-    <main class="relative z-10 max-w-2xl mx-auto px-6 py-16 md:py-24">
+    <main class="relative z-10 max-w-5xl mx-auto px-6 py-20 md:py-32">
 
       <!-- Hero -->
-      <header class="mb-20">
-        <div class="flex items-center gap-4 mb-8">
+      <header class="mb-32">
+        <div class="flex items-center gap-4 mb-12">
           <img src="/img/logo.svg" alt="Ludovic Guénet" class="w-14 h-14" />
           <div>
-            <h1 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">Ludovic Guénet</h1>
-            <p class="text-sm text-teal-700 font-medium">Laravel · Vue · Nuxt</p>
+            <h1 class="text-3xl md:text-4xl font-normal tracking-tight text-stone-900">Ludovic Guénet</h1>
+            <p class="text-sm text-stone-500 font-light mt-1">Laravel · Vue · Nuxt</p>
           </div>
         </div>
 
-        <p class="text-lg md:text-xl leading-relaxed text-slate-700 mb-4">
+        <p class="text-xl md:text-2xl font-light leading-relaxed text-stone-900 mb-6">
           I build production systems that handle scale, complexity, and time.
         </p>
-        <p class="text-base text-slate-600 leading-relaxed">
+        <p class="text-base font-light text-stone-500 leading-relaxed max-w-2xl">
           Strong backend foundations, clean frontend architecture, and code that ages well. I value boring solutions and software that doesn't wake anyone up at night.
         </p>
 
-        <div class="flex gap-3 mt-8">
-          <a href="mailto:ludo@epekta.com" class="inline-flex items-center gap-2 rounded-full bg-teal-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-teal-700 transition-colors shadow-md shadow-teal-600/20">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <div class="flex gap-4 mt-12">
+          <a href="mailto:ludo@epekta.com" class="inline-flex items-center gap-2 border border-stone-300 bg-white px-6 py-2.5 text-sm font-light text-stone-900 hover:border-stone-800 hover:text-stone-800 transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
             </svg>
             Get in touch
           </a>
-          <a href="https://github.com/ludoguenet" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/60 backdrop-blur px-5 py-2.5 text-sm font-medium text-slate-700 hover:border-teal-400 hover:text-teal-700 transition-colors">
+          <a href="https://github.com/ludoguenet" target="_blank" class="inline-flex items-center gap-2 border border-stone-300 bg-white px-6 py-2.5 text-sm font-light text-stone-900 hover:border-stone-800 hover:text-stone-800 transition-colors">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
             </svg>
@@ -67,78 +96,78 @@
       </header>
 
       <!-- Projects -->
-      <section class="mb-16">
-        <h2 class="text-xs font-semibold uppercase tracking-widest text-teal-700 mb-6">Selected Work</h2>
+      <section class="mb-32">
+        <h2 class="text-xs font-light uppercase tracking-widest text-stone-500 mb-12">Selected Work</h2>
 
-        <div class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-6">
 
-          <a href="https://laravel-zap.com" target="_blank" class="group block p-5 rounded-2xl bg-white/70 backdrop-blur border border-white/80 hover:bg-white/90 hover:shadow-lg hover:shadow-teal-100 transition-all">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">Zap</h3>
-                <p class="text-sm text-slate-600 mt-1">Calendar and recurring event management for Laravel. Handles timezone edge cases, DST transitions, and complex recurrence rules.</p>
+          <a href="https://laravel-zap.com" target="_blank" class="group block p-6 bg-white border border-stone-200 hover:border-stone-300 transition-colors">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-normal text-stone-900 group-hover:text-stone-800 transition-colors">Zap</h3>
+                <span class="shrink-0 text-xs font-light text-stone-500 border border-stone-200 px-2 py-0.5">Laravel</span>
               </div>
-              <span class="shrink-0 text-xs font-medium text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">Laravel</span>
+              <p class="text-sm font-light text-stone-500 leading-relaxed">Calendar and recurring event management for Laravel. Handles timezone edge cases, DST transitions, and complex recurrence rules.</p>
             </div>
           </a>
 
-          <a href="https://github.com/ludoguenet/nuxt-biscuit" target="_blank" class="group block p-5 rounded-2xl bg-white/70 backdrop-blur border border-white/80 hover:bg-white/90 hover:shadow-lg hover:shadow-teal-100 transition-all">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">Nuxt Biscuit</h3>
-                <p class="text-sm text-slate-600 mt-1">Sanctum authentication for Nuxt with session management, CSRF protection, and refresh tokens.</p>
+          <a href="https://github.com/ludoguenet/nuxt-biscuit" target="_blank" class="group block p-6 bg-white border border-stone-200 hover:border-stone-300 transition-colors">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-normal text-stone-900 group-hover:text-stone-800 transition-colors">Nuxt Biscuit</h3>
+                <span class="shrink-0 text-xs font-light text-stone-500 border border-stone-200 px-2 py-0.5">Nuxt</span>
               </div>
-              <span class="shrink-0 text-xs font-medium text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">Nuxt</span>
+              <p class="text-sm font-light text-stone-500 leading-relaxed">Sanctum authentication for Nuxt with session management, CSRF protection, and refresh tokens.</p>
             </div>
           </a>
 
-          <a href="https://github.com/ludoguenet/laravel-artifact" target="_blank" class="group block p-5 rounded-2xl bg-white/70 backdrop-blur border border-white/80 hover:bg-white/90 hover:shadow-lg hover:shadow-teal-100 transition-all">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">Laravel Artifact</h3>
-                <p class="text-sm text-slate-600 mt-1">Media management with explicit upload flows, storage drivers, and transformation pipelines.</p>
+          <a href="https://github.com/ludoguenet/laravel-artifact" target="_blank" class="group block p-6 bg-white border border-stone-200 hover:border-stone-300 transition-colors">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-normal text-stone-900 group-hover:text-stone-800 transition-colors">Laravel Artifact</h3>
+                <span class="shrink-0 text-xs font-light text-stone-500 border border-stone-200 px-2 py-0.5">Laravel</span>
               </div>
-              <span class="shrink-0 text-xs font-medium text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">Laravel</span>
+              <p class="text-sm font-light text-stone-500 leading-relaxed">Media management with explicit upload flows, storage drivers, and transformation pipelines.</p>
             </div>
           </a>
 
-          <a href="https://www.youtube.com/@LaravelJutsu" target="_blank" class="group block p-5 rounded-2xl bg-white/70 backdrop-blur border border-white/80 hover:bg-white/90 hover:shadow-lg hover:shadow-teal-100 transition-all">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">Laravel Jutsu</h3>
-                <p class="text-sm text-slate-600 mt-1">French Laravel tutorials, architecture, and live coding. Teaching by building real things.</p>
+          <a href="https://www.youtube.com/@LaravelJutsu" target="_blank" class="group block p-6 bg-white border border-stone-200 hover:border-stone-300 transition-colors">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-normal text-stone-900 group-hover:text-stone-800 transition-colors">Laravel Jutsu</h3>
+                <span class="shrink-0 text-xs font-light text-stone-500 border border-stone-200 px-2 py-0.5">YouTube</span>
               </div>
-              <span class="shrink-0 text-xs font-medium text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">YouTube</span>
+              <p class="text-sm font-light text-stone-500 leading-relaxed">French Laravel tutorials, architecture, and live coding. Teaching by building real things.</p>
             </div>
           </a>
 
-          <a href="https://www.youtube.com/@goblincodestudio" target="_blank" class="group block p-5 rounded-2xl bg-white/70 backdrop-blur border border-white/80 hover:bg-white/90 hover:shadow-lg hover:shadow-teal-100 transition-all">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">Goblin Code</h3>
-                <p class="text-sm text-slate-600 mt-1">English tutorials on Laravel, PHP, JavaScript, Vue, and modern web development.</p>
+          <a href="https://www.youtube.com/@goblincodestudio" target="_blank" class="group block p-6 bg-white border border-stone-200 hover:border-stone-300 transition-colors">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-normal text-stone-900 group-hover:text-stone-800 transition-colors">Goblin Code</h3>
+                <span class="shrink-0 text-xs font-light text-stone-500 border border-stone-200 px-2 py-0.5">YouTube</span>
               </div>
-              <span class="shrink-0 text-xs font-medium text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">YouTube</span>
+              <p class="text-sm font-light text-stone-500 leading-relaxed">English tutorials on Laravel, PHP, JavaScript, Vue, and modern web development.</p>
             </div>
           </a>
 
-          <a href="https://laraconnect.fr" target="_blank" class="group block p-5 rounded-2xl bg-white/70 backdrop-blur border border-white/80 hover:bg-white/90 hover:shadow-lg hover:shadow-teal-100 transition-all">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">LaraConnect</h3>
-                <p class="text-sm text-slate-600 mt-1">A community platform for Laravel developers. Curated content and structured discussions.</p>
+          <a href="https://laraconnect.fr" target="_blank" class="group block p-6 bg-white border border-stone-200 hover:border-stone-300 transition-colors">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-normal text-stone-900 group-hover:text-stone-800 transition-colors">LaraConnect</h3>
+                <span class="shrink-0 text-xs font-light text-stone-500 border border-stone-200 px-2 py-0.5">Community</span>
               </div>
-              <span class="shrink-0 text-xs font-medium text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">Community</span>
+              <p class="text-sm font-light text-stone-500 leading-relaxed">A community platform for Laravel developers. Curated content and structured discussions.</p>
             </div>
           </a>
 
-          <a href="https://marketplace.visualstudio.com/items?itemName=LudovicGuenet.tailwind-ninja-theme" target="_blank" class="group block p-5 rounded-2xl bg-white/70 backdrop-blur border border-white/80 hover:bg-white/90 hover:shadow-lg hover:shadow-teal-100 transition-all">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">Tailwind Ninja</h3>
-                <p class="text-sm text-slate-600 mt-1">High-contrast, distraction-free VS Code theme. Because tooling should disappear while you think.</p>
+          <a href="https://marketplace.visualstudio.com/items?itemName=LudovicGuenet.tailwind-ninja-theme" target="_blank" class="group block p-6 bg-white border border-stone-200 hover:border-stone-300 transition-colors">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-normal text-stone-900 group-hover:text-stone-800 transition-colors">Tailwind Ninja</h3>
+                <span class="shrink-0 text-xs font-light text-stone-500 border border-stone-200 px-2 py-0.5">VS Code</span>
               </div>
-              <span class="shrink-0 text-xs font-medium text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">VS Code</span>
+              <p class="text-sm font-light text-stone-500 leading-relaxed">High-contrast, distraction-free VS Code theme. Because tooling should disappear while you think.</p>
             </div>
           </a>
 
@@ -146,35 +175,35 @@
       </section>
 
       <!-- Principles -->
-      <section class="mb-16">
-        <h2 class="text-xs font-semibold uppercase tracking-widest text-teal-700 mb-6">How I Work</h2>
+      <section class="mb-32">
+        <h2 class="text-xs font-light uppercase tracking-widest text-stone-500 mb-12">How I Work</h2>
 
-        <div class="grid gap-4">
-          <div class="p-5 rounded-2xl bg-white/50 backdrop-blur border border-white/60">
-            <p class="text-slate-700 leading-relaxed">Explicit architecture over clever abstractions. If it's not obvious, it's wrong.</p>
+        <div class="grid gap-6">
+          <div class="p-6 bg-stone-50 border border-stone-200">
+            <p class="text-stone-900 font-light leading-relaxed">Explicit architecture over clever abstractions. If it's not obvious, it's wrong.</p>
           </div>
-          <div class="p-5 rounded-2xl bg-white/50 backdrop-blur border border-white/60">
-            <p class="text-slate-700 leading-relaxed">Write tests where failure would actually hurt.</p>
+          <div class="p-6 bg-stone-50 border border-stone-200">
+            <p class="text-stone-900 font-light leading-relaxed">Write tests where failure would actually hurt.</p>
           </div>
-          <div class="p-5 rounded-2xl bg-white/50 backdrop-blur border border-white/60">
-            <p class="text-slate-700 leading-relaxed">APIs and UIs as one system. The backend doesn't exist in isolation.</p>
+          <div class="p-6 bg-stone-50 border border-stone-200">
+            <p class="text-stone-900 font-light leading-relaxed">APIs and UIs as one system. The backend doesn't exist in isolation.</p>
           </div>
         </div>
       </section>
 
       <!-- Footer -->
-      <footer class="pt-8 border-t border-teal-200/60">
-        <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between text-sm text-slate-600">
+      <footer class="pt-12 border-t border-stone-200">
+        <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between text-sm font-light text-stone-500">
           <div class="flex items-center gap-2">
-            <a href="mailto:ludo@epekta.com" class="hover:text-teal-700 transition-colors">ludo@epekta.com</a>
-            <span class="text-slate-400">·</span>
+            <a href="mailto:ludo@epekta.com" class="hover:text-stone-900 transition-colors">ludo@epekta.com</a>
+            <span class="text-stone-300">·</span>
             <span>France</span>
           </div>
           <div class="flex items-center gap-4">
-            <a href="https://github.com/ludoguenet" target="_blank" class="hover:text-teal-700 transition-colors">GitHub</a>
-            <a href="https://www.linkedin.com/in/ludoguenet" target="_blank" class="hover:text-teal-700 transition-colors">LinkedIn</a>
-            <a href="https://x.com/LudovicGuenet" target="_blank" class="hover:text-teal-700 transition-colors">X</a>
-            <a href="https://bsky.app/profile/laraveljutsu.bsky.social" target="_blank" class="hover:text-teal-700 transition-colors">Bluesky</a>
+            <a href="https://github.com/ludoguenet" target="_blank" class="hover:text-stone-900 transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/ludoguenet" target="_blank" class="hover:text-stone-900 transition-colors">LinkedIn</a>
+            <a href="https://x.com/LudovicGuenet" target="_blank" class="hover:text-stone-900 transition-colors">X</a>
+            <a href="https://bsky.app/profile/laraveljutsu.bsky.social" target="_blank" class="hover:text-stone-900 transition-colors">Bluesky</a>
           </div>
         </div>
       </footer>

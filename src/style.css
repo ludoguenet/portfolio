@@ -19,34 +19,7 @@ h1, h2, h3 {
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid rgb(13 148 136 / 0.5);
+  outline: 1px solid rgb(41 37 36 / 0.3);
   outline-offset: 2px;
-  border-radius: 4px;
 }
 
-/* Subtle fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  header {
-    animation: fadeIn 0.5s ease-out 0.1s both;
-  }
-  section:nth-of-type(1) {
-    animation: fadeIn 0.5s ease-out 0.2s both;
-  }
-  section:nth-of-type(2) {
-    animation: fadeIn 0.5s ease-out 0.3s both;
-  }
-  footer {
-    animation: fadeIn 0.5s ease-out 0.4s both;
-  }
-}

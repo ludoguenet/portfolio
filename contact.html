@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | ludovicguenet.dev</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Space+Grotesk:wght@300;500;700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-fixed": "#ffffff", "surface-container-highest": "#373433", "on-surface-variant": "#c6c6c6", "on-tertiary-fixed": "#ffffff", "surface-container-high": "#2c2928", "background": "#151312", "error-container": "#93000a", "on-surface": "#e8e1df", "tertiary-fixed": "#8A6F00", "surface-bright": "#3c3837", "on-error": "#690005", "on-tertiary-container": "#000000", "on-background": "#e8e1df", "tertiary-fixed-dim": "#5C4A00", "outline": "#919191", "on-primary-container": "#000000", "secondary-fixed": "#cdc5c3", "surface-tint": "#E6C200", "surface": "#151312", "on-error-container": "#ffdad6", "surface-dim": "#151312", "primary-fixed": "#8A6F00", "primary-container": "#F2D743", "surface-container-low": "#1d1b1a", "inverse-on-surface": "#33302e", "surface-variant": "#373433", "on-tertiary": "#171e00", "tertiary": "#F7DF1E", "primary": "#ffffff", "error": "#ffb4ab", "primary-fixed-dim": "#5C4A00", "on-primary": "#171e00", "surface-container-lowest": "#100e0d", "on-secondary-container": "#e9e1df", "on-secondary-fixed-variant": "#3f3a39", "inverse-primary": "#8A6F00", "secondary-container": "#4b4644", "on-secondary-fixed": "#1e1b1a", "on-primary-fixed-variant": "#F7DF1E", "surface-container": "#221f1e", "secondary": "#cdc5c3", "on-tertiary-fixed-variant": "#F7DF1E", "secondary-fixed-dim": "#b1aaa8", "tertiary-container": "#B89400", "outline-variant": "#474747", "on-secondary": "#1e1b1a", "inverse-surface": "#e8e1df" }, borderRadius: { DEFAULT: "0px", lg: "0px", xl: "0px", full: "9999px" }, fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Space Grotesk"] } } } };
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24; vertical-align: middle; }
+    body { background-color: #151312; color: #e8e1df; font-family: "Inter", sans-serif; }
+    .acid-burn { background: linear-gradient(135deg, #F7DF1E 0%, #F2D743 100%); }
+  </style>
+</head>
+<body class="overflow-x-hidden bg-surface text-on-surface selection:bg-tertiary selection:text-on-tertiary">
+  <nav class="sticky top-0 z-50 w-full border-b border-[#2c2928] bg-[#151312]">
+    <div class="mx-auto flex w-full max-w-[1920px] items-center justify-between px-6 py-6 md:px-12">
+      <a class="font-label text-[#F7DF1E] font-black uppercase tracking-[0.2em]" href="/">LUDOVICGUENET.DEV</a>
+      <div class="hidden items-center space-x-12 md:flex">
+        <a class="font-headline text-lg font-normal tracking-tighter text-[#cdc5c3] transition-colors hover:text-[#F7DF1E]" href="/">Archive</a>
+        <a class="font-headline text-lg font-normal tracking-tighter text-[#cdc5c3] transition-colors hover:text-[#F7DF1E]" href="/labs.html">Labs</a>
+        <a class="font-headline text-lg font-normal tracking-tighter text-[#cdc5c3] transition-colors hover:text-[#F7DF1E]" href="/studio.html">Studio</a>
+        <a class="border-b-2 border-[#F7DF1E] pb-1 font-headline text-lg font-normal tracking-tighter text-[#F7DF1E]" href="/contact.html">Contact</a>
+      </div>
+      <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-[#F7DF1E]" id="menu-toggle" type="button">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <a class="bg-[#F7DF1E] px-6 py-2 font-label text-sm font-bold uppercase tracking-widest text-[#171e00] transition-all duration-150 hover:scale-95" href="mailto:ludo@epekta.com">Hire Me</a>
+    </div>
+    <div class="hidden border-t border-[#2c2928] bg-[#151312] px-6 py-6 md:hidden" id="mobile-menu">
+      <div class="flex flex-col gap-4">
+        <a class="font-headline text-lg text-[#cdc5c3]" href="/">Archive</a>
+        <a class="font-headline text-lg text-[#cdc5c3]" href="/labs.html">Labs</a>
+        <a class="font-headline text-lg text-[#cdc5c3]" href="/studio.html">Studio</a>
+        <a class="font-headline text-lg text-[#F7DF1E]" href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <aside class="fixed left-0 top-0 z-40 mt-[88px] hidden h-screen w-64 flex-col border-r border-[#2c2928] bg-[#1d1b1a] py-8 lg:flex">
+    <div class="mb-12 px-6">
+      <div class="mb-4 flex items-center gap-4">
+        <img alt="Senior Engineer Profile" class="h-10 w-10 object-contain" src="/img/logo.svg" />
+        <div>
+          <div class="font-label text-xs font-black tracking-widest text-[#F7DF1E]">SOFTWARE ARCHITECT</div>
+          <div class="text-[10px] uppercase tracking-widest text-secondary">PHP / LARAVEL</div>
+        </div>
+      </div>
+    </div>
+    <nav class="flex-1">
+      <div class="space-y-1">
+        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="/"><span class="material-symbols-outlined">inventory_2</span>Archive</a>
+        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="/labs.html"><span class="material-symbols-outlined">science</span>Labs</a>
+        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="/studio.html"><span class="material-symbols-outlined">architecture</span>Studio</a>
+        <a class="flex items-center gap-4 border-l-4 border-[#F7DF1E] bg-[#2c2928] px-6 py-4 font-label text-xs uppercase tracking-widest text-[#F7DF1E]" href="/contact.html"><span class="material-symbols-outlined">terminal</span>Contact</a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="grid min-h-screen grid-cols-12 gap-0 px-6 pb-32 pt-24 md:px-12 lg:ml-64">
+    <header class="col-span-12 mb-24 md:col-span-10 md:col-start-2">
+      <span class="mb-4 block font-label text-xs uppercase tracking-[0.2em] text-tertiary">Communication Protocol</span>
+      <h1 class="font-headline text-6xl font-black uppercase leading-[0.85] tracking-tighter md:text-8xl">Project <br /><span class="text-tertiary">Inquiry.</span></h1>
+      <p class="mt-8 max-w-xl font-body text-lg leading-relaxed text-secondary">
+        A direct interface for technical collaboration, architectural consulting, or editorial commissions. I am currently prioritizing high-impact engineering projects.
+      </p>
+    </header>
+
+    <div class="col-span-12 grid grid-cols-1 gap-12 md:col-span-11 md:col-start-2 md:grid-cols-11">
+      <section class="bg-surface-container-low p-8 md:col-span-6 md:p-12">
+        <form action="https://formspree.io/f/xlgabgqg" class="space-y-12" id="contact-form" method="post">
+          <div class="space-y-1"><label class="font-label text-xs uppercase tracking-widest text-outline">01 // Identity</label><input class="w-full border-b border-outline-variant bg-transparent py-4 font-label text-sm tracking-widest placeholder:text-surface-container-highest focus:border-tertiary focus:ring-0" name="name" placeholder="NAME / ENTITY" required type="text" /></div>
+          <div class="space-y-1"><label class="font-label text-xs uppercase tracking-widest text-outline">02 // Digital Node</label><input class="w-full border-b border-outline-variant bg-transparent py-4 font-label text-sm tracking-widest placeholder:text-surface-container-highest focus:border-tertiary focus:ring-0" name="email" placeholder="EMAIL ADDRESS" required type="email" /></div>
+          <div class="space-y-1"><label class="font-label text-xs uppercase tracking-widest text-outline">03 // Project Scope</label><textarea class="w-full resize-none border-b border-outline-variant bg-transparent py-4 font-label text-sm tracking-widest placeholder:text-surface-container-highest focus:border-tertiary focus:ring-0" name="message" placeholder="DESCRIBE THE ARCHITECTURAL CHALLENGE OR EDITORIAL NEED" required rows="4"></textarea></div>
+          <input name="_subject" type="hidden" value="New inquiry from ludovicguenet.dev" />
+          <button class="acid-burn w-full px-12 py-5 font-label text-xs font-bold uppercase tracking-widest text-on-tertiary transition-all hover:opacity-90 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto" id="contact-submit" type="submit">Initialize Transmission</button>
+          <p class="hidden font-label text-[11px] uppercase tracking-widest text-secondary" id="form-status"></p>
+        </form>
+      </section>
+
+      <aside class="flex flex-col justify-between py-4 md:col-span-4">
+        <div class="space-y-16">
+          <div>
+            <h3 class="mb-6 font-label text-xs uppercase tracking-[0.2em] text-outline">Direct Channels</h3>
+            <a class="group block" href="mailto:ludo@epekta.com"><span class="font-headline text-2xl transition-colors group-hover:text-tertiary">ludo@epekta.com</span><div class="mt-2 h-[1px] w-full bg-outline-variant transition-colors group-hover:bg-tertiary"></div></a>
+          </div>
+          <div>
+            <h3 class="mb-6 font-label text-xs uppercase tracking-[0.2em] text-outline">Network Nodes</h3>
+            <ul class="space-y-6 font-label text-sm uppercase tracking-widest">
+              <li><a class="flex items-center justify-between transition-colors hover:text-tertiary" href="https://github.com/ludoguenet" target="_blank" rel="noreferrer"><span>GitHub</span><span class="material-symbols-outlined text-xs">arrow_outward</span></a></li>
+              <li><a class="flex items-center justify-between transition-colors hover:text-tertiary" href="https://www.linkedin.com/in/ludoguenet" target="_blank" rel="noreferrer"><span>LinkedIn</span><span class="material-symbols-outlined text-xs">arrow_outward</span></a></li>
+              <li><a class="flex items-center justify-between transition-colors hover:text-tertiary" href="https://bsky.app/profile/laraveljutsu.bsky.social" target="_blank" rel="noreferrer"><span>Bluesky</span><span class="material-symbols-outlined text-xs">arrow_outward</span></a></li>
+              <li><a class="flex items-center justify-between transition-colors hover:text-tertiary" href="https://x.com/LudovicGuenet" target="_blank" rel="noreferrer"><span>X</span><span class="material-symbols-outlined text-xs">arrow_outward</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-24 border-l-2 border-tertiary bg-surface-container-high p-8 md:mt-0">
+          <p class="font-label text-[10px] uppercase tracking-wider text-secondary-fixed-dim">Response Latency: 24-48 Hours<br />Current Status: Accepting Select Inquiries<br />Encryption: Enabled (TLS 1.3)</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="flex w-full flex-col items-center justify-between border-t border-[#2c2928] bg-[#151312] px-12 py-8 md:flex-row">
+    <div class="font-body text-[10px] uppercase tracking-widest text-[#cdc5c3]">© 2024 LUDOVICGUENET.DEV / ALL RIGHTS RESERVED</div>
+    <div class="mt-4 flex gap-8 md:mt-0">
+      <a class="font-body text-[10px] uppercase tracking-widest text-[#cdc5c3] underline decoration-[#F7DF1E] decoration-2 transition-all hover:text-[#F7DF1E]" href="https://github.com/ludoguenet" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="font-body text-[10px] uppercase tracking-widest text-[#cdc5c3] underline decoration-[#F7DF1E] decoration-2 transition-all hover:text-[#F7DF1E]" href="https://www.linkedin.com/in/ludoguenet" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="font-body text-[10px] uppercase tracking-widest text-[#cdc5c3] underline decoration-[#F7DF1E] decoration-2 transition-all hover:text-[#F7DF1E]" href="https://bsky.app/profile/laraveljutsu.bsky.social" target="_blank" rel="noreferrer">Bluesky</a>
+    </div>
+  </footer>
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuToggle && mobileMenu) {
+      const menuIcon = menuToggle.querySelector(".material-symbols-outlined");
+      const setMenuState = (open) => {
+        mobileMenu.classList.toggle("hidden", !open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        if (menuIcon) menuIcon.textContent = open ? "close" : "menu";
+      };
+      menuToggle.addEventListener("click", () => setMenuState(menuToggle.getAttribute("aria-expanded") !== "true"));
+      mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenuState(false)));
+      window.addEventListener("keydown", (event) => { if (event.key === "Escape") setMenuState(false); });
+    }
+
+    const contactForm = document.getElementById("contact-form");
+    const submitButton = document.getElementById("contact-submit");
+    const formStatus = document.getElementById("form-status");
+
+    if (contactForm && submitButton && formStatus) {
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        submitButton.disabled = true;
+        submitButton.textContent = "Transmitting...";
+        formStatus.classList.remove("hidden");
+        formStatus.textContent = "Transmission in progress...";
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: new FormData(contactForm),
+            headers: { Accept: "application/json" }
+          });
+
+          if (response.ok) {
+            contactForm.reset();
+            formStatus.textContent = "Transmission successful. Response window: 24-48h.";
+          } else {
+            formStatus.textContent = "Transmission failed. Please retry in a moment.";
+          }
+        } catch (_error) {
+          formStatus.textContent = "Network error. Please retry in a moment.";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Initialize Transmission";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labs | ludovicguenet.dev</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Space+Grotesk:wght@300;500;700&amp;family=Inter:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-fixed": "#ffffff", "surface-container-highest": "#373433", "on-surface-variant": "#c6c6c6", "on-tertiary-fixed": "#ffffff", "surface-container-high": "#2c2928", "background": "#151312", "error-container": "#93000a", "on-surface": "#e8e1df", "tertiary-fixed": "#8A6F00", "surface-bright": "#3c3837", "on-error": "#690005", "on-tertiary-container": "#000000", "on-background": "#e8e1df", "tertiary-fixed-dim": "#5C4A00", "outline": "#919191", "on-primary-container": "#000000", "secondary-fixed": "#cdc5c3", "surface-tint": "#E6C200", "surface": "#151312", "on-error-container": "#ffdad6", "surface-dim": "#151312", "primary-fixed": "#8A6F00", "primary-container": "#F2D743", "surface-container-low": "#1d1b1a", "inverse-on-surface": "#33302e", "surface-variant": "#373433", "on-tertiary": "#171e00", "tertiary": "#F7DF1E", "primary": "#ffffff", "error": "#ffb4ab", "primary-fixed-dim": "#5C4A00", "on-primary": "#171e00", "surface-container-lowest": "#100e0d", "on-secondary-container": "#e9e1df", "on-secondary-fixed-variant": "#3f3a39", "inverse-primary": "#8A6F00", "secondary-container": "#4b4644", "on-secondary-fixed": "#1e1b1a", "on-primary-fixed-variant": "#F7DF1E", "surface-container": "#221f1e", "secondary": "#cdc5c3", "on-tertiary-fixed-variant": "#F7DF1E", "secondary-fixed-dim": "#b1aaa8", "tertiary-container": "#B89400", "outline-variant": "#474747", "on-secondary": "#1e1b1a", "inverse-surface": "#e8e1df" }, borderRadius: { DEFAULT: "0px", lg: "0px", xl: "0px", full: "9999px" }, fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Space Grotesk"] } } } };
+  </script>
+  <style>.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24; } body { background-color: #151312; color: #e8e1df; }</style>
+</head>
+<body class="overflow-x-hidden font-body selection:bg-tertiary selection:text-on-tertiary">
+  <nav class="sticky top-0 z-50 w-full border-b border-[#2c2928] bg-[#151312]">
+    <div class="mx-auto flex w-full max-w-[1920px] items-center justify-between px-6 py-6 md:px-12">
+      <a class="font-label text-[#F7DF1E] font-black uppercase tracking-[0.2em]" href="/">LUDOVICGUENET.DEV</a>
+      <div class="hidden items-center space-x-12 md:flex">
+        <a class="font-headline text-lg font-normal tracking-tighter text-[#cdc5c3] transition-colors hover:text-[#F7DF1E]" href="/">Archive</a>
+        <a class="border-b-2 border-[#F7DF1E] pb-1 font-headline text-lg font-normal tracking-tighter text-[#F7DF1E]" href="/labs.html">Labs</a>
+        <a class="font-headline text-lg font-normal tracking-tighter text-[#cdc5c3] transition-colors hover:text-[#F7DF1E]" href="/studio.html">Studio</a>
+        <a class="font-headline text-lg font-normal tracking-tighter text-[#cdc5c3] transition-colors hover:text-[#F7DF1E]" href="/contact.html">Contact</a>
+      </div>
+      <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-[#F7DF1E]" id="menu-toggle" type="button"><span class="material-symbols-outlined">menu</span></button>
+      <a class="bg-[#F7DF1E] px-6 py-2 font-label text-sm font-bold uppercase tracking-widest text-[#171e00] transition-all duration-150 hover:scale-95" href="mailto:ludo@epekta.com">Hire Me</a>
+    </div>
+    <div class="hidden border-t border-[#2c2928] bg-[#151312] px-6 py-6 md:hidden" id="mobile-menu">
+      <div class="flex flex-col gap-4">
+        <a class="font-headline text-lg text-[#cdc5c3]" href="/">Archive</a>
+        <a class="font-headline text-lg text-[#F7DF1E]" href="/labs.html">Labs</a>
+        <a class="font-headline text-lg text-[#cdc5c3]" href="/studio.html">Studio</a>
+        <a class="font-headline text-lg text-[#cdc5c3]" href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <aside class="fixed left-0 top-0 z-40 mt-[88px] hidden h-screen w-64 flex-col border-r border-[#2c2928] bg-[#1d1b1a] py-8 lg:flex">
+    <div class="mb-12 px-6">
+      <div class="mb-4 flex items-center gap-4">
+        <img alt="Senior Engineer Profile" class="h-10 w-10 object-contain" src="/img/logo.svg" />
+        <div>
+          <div class="font-label text-xs font-black tracking-widest text-[#F7DF1E]">SOFTWARE ARCHITECT</div>
+          <div class="text-[10px] uppercase tracking-widest text-secondary">PHP / LARAVEL</div>
+        </div>
+      </div>
+    </div>
+    <nav class="flex-1">
+      <div class="space-y-1">
+        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="/"><span class="material-symbols-outlined">inventory_2</span>Archive</a>
+        <a class="flex items-center gap-4 border-l-4 border-[#F7DF1E] bg-[#2c2928] px-6 py-4 font-label text-xs uppercase tracking-widest text-[#F7DF1E]" href="/labs.html"><span class="material-symbols-outlined">science</span>Labs</a>
+        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="/studio.html"><span class="material-symbols-outlined">architecture</span>Studio</a>
+        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="/contact.html"><span class="material-symbols-outlined">terminal</span>Contact</a>
+      </div>
+    </nav>
+    <div class="mb-24 space-y-4 px-6">
+      <a class="block w-full border border-outline-variant/20 bg-surface-container-high py-3 text-center font-label text-[10px] uppercase tracking-[0.2em] text-tertiary transition-all hover:bg-tertiary hover:text-on-primary" href="/">View Ledger</a>
+      <div class="border-t border-outline-variant/10 pt-4">
+        <a class="mb-2 flex items-center gap-3 text-[10px] uppercase tracking-widest text-secondary" href="https://github.com/ludoguenet" target="_blank" rel="noreferrer"><span class="material-symbols-outlined text-sm">code</span> GitHub</a>
+        <a class="flex items-center gap-3 text-[10px] uppercase tracking-widest text-secondary" href="https://www.linkedin.com/in/ludoguenet" target="_blank" rel="noreferrer"><span class="material-symbols-outlined text-sm">account_circle</span> LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="min-h-screen bg-surface lg:ml-64">
+    <section class="grid grid-cols-12 gap-6 px-8 pb-32 pt-24 md:px-20">
+      <div class="col-span-12 md:col-span-10 md:col-start-2">
+        <div class="mb-6 flex items-center space-x-4"><div class="h-[1px] w-12 bg-tertiary"></div><span class="font-label text-[10px] uppercase tracking-widest text-tertiary">R&amp;D / Technical Experiments</span></div>
+        <h1 class="mb-12 font-headline text-6xl font-black uppercase leading-none tracking-tighter md:text-8xl">Artifacts <br /><span class="font-normal italic text-on-surface-variant">&amp;</span> Experiments</h1>
+        <div class="grid grid-cols-1 gap-12 border-t border-outline-variant/10 pt-12 md:grid-cols-2">
+          <p class="max-w-md font-body text-lg leading-relaxed text-secondary">A curated ledger of technical explorations. These artifacts represent the intersection of architectural discipline and experimental development practices.</p>
+          <div class="space-y-4">
+            <div class="flex items-end justify-between border-b border-outline-variant/10 pb-2"><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Active Research</span><span class="font-label text-xs uppercase text-tertiary">Modular Monoliths</span></div>
+            <div class="flex items-end justify-between border-b border-outline-variant/10 pb-2"><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Primary Focus</span><span class="font-label text-xs uppercase text-tertiary">Deterministic State</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface-container-low px-8 py-24 md:px-20">
+      <div class="grid grid-cols-12 gap-8">
+        <div class="col-span-12 md:col-span-10 md:col-start-2">
+          <h2 class="mb-3 font-headline text-4xl leading-tight">Latest Articles on <span class="text-tertiary">Laravel France</span></h2>
+          <p class="mb-10 max-w-3xl text-secondary">Fresh posts from <a class="text-tertiary underline" href="https://laravel-france.com/posts" target="_blank" rel="noreferrer">laravel-france.com</a>, updated dynamically.</p>
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2" id="laravel-france-articles">
+            <div class="animate-pulse bg-surface-container-high p-6"><div class="mb-4 h-3 w-24 bg-surface-container-highest"></div><div class="mb-2 h-6 w-5/6 bg-surface-container-highest"></div><div class="h-4 w-full bg-surface-container-highest"></div></div>
+            <div class="animate-pulse bg-surface-container-high p-6"><div class="mb-4 h-3 w-24 bg-surface-container-highest"></div><div class="mb-2 h-6 w-5/6 bg-surface-container-highest"></div><div class="h-4 w-full bg-surface-container-highest"></div></div>
+            <div class="animate-pulse bg-surface-container-high p-6"><div class="mb-4 h-3 w-24 bg-surface-container-highest"></div><div class="mb-2 h-6 w-5/6 bg-surface-container-highest"></div><div class="h-4 w-full bg-surface-container-highest"></div></div>
+            <div class="animate-pulse bg-surface-container-high p-6"><div class="mb-4 h-3 w-24 bg-surface-container-highest"></div><div class="mb-2 h-6 w-5/6 bg-surface-container-highest"></div><div class="h-4 w-full bg-surface-container-highest"></div></div>
+          </div>
+          <p class="mt-6 hidden font-label text-xs uppercase tracking-widest text-secondary" id="articles-fallback">Unable to load latest posts. Browse directly on <a class="text-tertiary underline" href="https://laravel-france.com/posts" target="_blank" rel="noreferrer">Laravel France</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-8 py-32 md:px-20">
+      <div class="mb-16 flex items-center justify-between"><h2 class="font-headline text-3xl uppercase tracking-tighter italic">Latest Videos</h2><span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">@LaravelJutsu</span></div>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3" id="youtube-videos">
+        <div class="animate-pulse bg-surface-container-low p-6"><div class="mb-4 aspect-video bg-surface-container-high"></div><div class="h-4 w-5/6 bg-surface-container-high"></div></div>
+        <div class="animate-pulse bg-surface-container-low p-6"><div class="mb-4 aspect-video bg-surface-container-high"></div><div class="h-4 w-5/6 bg-surface-container-high"></div></div>
+        <div class="animate-pulse bg-surface-container-low p-6"><div class="mb-4 aspect-video bg-surface-container-high"></div><div class="h-4 w-5/6 bg-surface-container-high"></div></div>
+      </div>
+      <p class="mt-6 hidden font-label text-xs uppercase tracking-widest text-secondary" id="youtube-fallback">Unable to load videos right now. Visit <a class="text-tertiary underline" href="https://www.youtube.com/@LaravelJutsu/videos" target="_blank" rel="noreferrer">the channel</a>.</p>
+    </section>
+  </main>
+
+  <footer class="w-full border-t border-[#2c2928] bg-[#151312]"><div class="flex w-full flex-col items-center justify-between px-12 py-8 md:flex-row"><div class="mb-4 font-headline text-sm font-bold text-[#F7DF1E] md:mb-0">LUDOVICGUENET.DEV</div><div class="flex space-x-8"><a class="font-body text-[10px] uppercase tracking-widest text-[#cdc5c3] underline decoration-[#F7DF1E] decoration-2 transition-colors duration-200 hover:text-[#F7DF1E]" href="https://github.com/ludoguenet" target="_blank" rel="noreferrer">GitHub</a><a class="font-body text-[10px] uppercase tracking-widest text-[#cdc5c3] underline decoration-[#F7DF1E] decoration-2 transition-colors duration-200 hover:text-[#F7DF1E]" href="https://www.linkedin.com/in/ludoguenet" target="_blank" rel="noreferrer">LinkedIn</a><a class="font-body text-[10px] uppercase tracking-widest text-[#cdc5c3] underline decoration-[#F7DF1E] decoration-2 transition-colors duration-200 hover:text-[#F7DF1E]" href="/contact.html">Contact</a></div><div class="mt-4 font-body text-[10px] uppercase tracking-widest text-[#cdc5c3] md:mt-0">© 2024 LUDOVICGUENET.DEV / ALL RIGHTS RESERVED</div></div></footer>
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuToggle && mobileMenu) {
+      const menuIcon = menuToggle.querySelector(".material-symbols-outlined");
+      const setMenuState = (open) => {
+        mobileMenu.classList.toggle("hidden", !open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        if (menuIcon) menuIcon.textContent = open ? "close" : "menu";
+      };
+      menuToggle.addEventListener("click", () => setMenuState(menuToggle.getAttribute("aria-expanded") !== "true"));
+      mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenuState(false)));
+      window.addEventListener("keydown", (event) => { if (event.key === "Escape") setMenuState(false); });
+    }
+
+    const videosContainer = document.getElementById("youtube-videos");
+    const videosFallback = document.getElementById("youtube-fallback");
+    const channelFeed = "https://www.youtube.com/feeds/videos.xml?channel_id=UC36hi0WMeiR8HpUy-A2s4vQ";
+    const feedUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(channelFeed);
+
+    const renderVideos = (items) => {
+      if (!videosContainer) return;
+      videosContainer.innerHTML = items.map((item) => {
+        const thumbnail = item.thumbnail || "/img/logo.svg";
+        const published = new Date(item.pubDate).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+        return `
+          <article class="group bg-surface-container-low p-6">
+            <a href="${item.link}" target="_blank" rel="noreferrer">
+              <img src="${thumbnail}" alt="${item.title}" class="mb-4 aspect-video w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0" />
+              <p class="mb-2 font-label text-[10px] uppercase tracking-[0.2em] text-tertiary">${published}</p>
+              <h3 class="font-headline text-2xl leading-tight group-hover:text-tertiary transition-colors">${item.title}</h3>
+            </a>
+          </article>
+        `;
+      }).join("");
+    };
+
+    fetch(feedUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.items || !data.items.length) throw new Error("No videos");
+        renderVideos(data.items.slice(0, 6));
+      })
+      .catch(() => {
+        if (videosFallback) videosFallback.classList.remove("hidden");
+        if (videosContainer) videosContainer.innerHTML = "";
+      });
+
+    const articlesContainer = document.getElementById("laravel-france-articles");
+    const articlesFallback = document.getElementById("articles-fallback");
+    const postsUrl = "https://laravel-france.com/posts";
+    const proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(postsUrl);
+
+    const renderArticles = (items) => {
+      if (!articlesContainer) return;
+      articlesContainer.innerHTML = items.map((item) => `
+        <article class="group bg-surface-container-high p-6">
+          <a href="${item.url}" target="_blank" rel="noreferrer">
+            <p class="mb-3 font-label text-[10px] uppercase tracking-widest text-tertiary">${item.date}</p>
+            <h3 class="mb-3 font-headline text-2xl leading-tight transition-colors group-hover:text-tertiary">${item.title}</h3>
+            <p class="text-sm leading-relaxed text-secondary">${item.excerpt}</p>
+          </a>
+        </article>
+      `).join("");
+    };
+
+    fetch(proxyUrl)
+      .then((res) => res.text())
+      .then((html) => {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        const links = [...doc.querySelectorAll('a[href*="/posts/"]')];
+        const unique = [];
+        const seen = new Set();
+        for (const link of links) {
+          if (!link.href || seen.has(link.href)) continue;
+          seen.add(link.href);
+          unique.push(link);
+        }
+
+        const articles = unique.slice(0, 6).map((link) => {
+          const raw = (link.textContent || "").trim().replace(/\s+/g, " ");
+          const dateMatch = raw.match(/^\d{1,2}\s+\w+\s+\d{4}/);
+          const date = dateMatch ? dateMatch[0] : "Laravel France";
+          const cleaned = dateMatch ? raw.replace(dateMatch[0], "").trim() : raw;
+          const words = cleaned.split(" ").filter(Boolean);
+          const title = words.slice(0, 12).join(" ");
+          const excerpt = words.slice(12, 34).join(" ") || "Read the full article on Laravel France.";
+          return { url: link.href, date, title: title || "Untitled article", excerpt };
+        });
+
+        if (!articles.length) throw new Error("No articles");
+        renderArticles(articles);
+      })
+      .catch(() => {
+        if (articlesFallback) articlesFallback.classList.remove("hidden");
+        if (articlesContainer) articlesContainer.innerHTML = "";
+      });
+  </script>
+</body>
+</html>

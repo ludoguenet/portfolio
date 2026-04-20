@@ -1,327 +1,457 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ludovicguenet.dev | Ludovic Guénet</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            background: "#151312",
-            surface: "#151312",
-            "surface-container-low": "#1d1b1a",
-            "surface-container-high": "#2c2928",
-            "surface-container-highest": "#373433",
-            "surface-container-lowest": "#100e0d",
-            "outline-variant": "#474747",
-            secondary: "#cdc5c3",
-            tertiary: "#F7DF1E"
-          },
-          fontFamily: {
-            headline: ["Space Grotesk"],
-            body: ["Inter"],
-            label: ["Space Grotesk"]
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUDOVIC GUÉNET | PRECISION ARCHITECT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#f0f1f1",
+              "surface-container-low": "#f3f3f4",
+              "surface-container-highest": "#e2e2e2",
+              "on-tertiary-container": "#6a5e7d",
+              "on-surface": "#1a1c1c",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#434938",
+              "surface-bright": "#f9f9f9",
+              "on-secondary-fixed": "#1c1b1b",
+              "surface-dim": "#dadada",
+              "tertiary-container": "#ebdbff",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-secondary": "#ffffff",
+              "primary": "#476800",
+              "surface-tint": "#476800",
+              "on-primary-container": "#4b6e00",
+              "surface-container-high": "#e8e8e8",
+              "surface-variant": "#e2e2e2",
+              "primary-fixed": "#bff365",
+              "on-tertiary-fixed": "#201731",
+              "background": "#f9f9f9",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#354e00",
+              "outline-variant": "#c3c9b2",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff",
+              "on-background": "#1a1c1c",
+              "outline": "#747966",
+              "on-tertiary-fixed-variant": "#4d425e",
+              "secondary-container": "#e5e2e1",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#e5e2e1",
+              "tertiary-fixed-dim": "#cfc0e3",
+              "on-secondary-fixed-variant": "#474646",
+              "on-secondary-container": "#656464",
+              "primary-container": "#bef264",
+              "surface": "#f9f9f9",
+              "surface-container-lowest": "#ffffff",
+              "tertiary": "#655977",
+              "on-primary-fixed": "#131f00",
+              "tertiary-fixed": "#ecdcff",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#a4d64c",
+              "primary-fixed-dim": "#a4d64c",
+              "inverse-surface": "#2f3131",
+              "secondary": "#5f5e5e",
+              "surface-container": "#eeeeee"
+            },
+            borderRadius: {
+              DEFAULT: "0px",
+              lg: "0px",
+              xl: "0px",
+              full: "0px"
+            },
+            fontFamily: {
+              headline: ["Inter"],
+              body: ["Inter"],
+              label: ["Inter"]
+            }
           }
         }
-      }
-    };
-  </script>
-  <style>
-    body { background: #151312; color: #e8e1df; }
-    .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24; }
-  </style>
+      };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        }
+        ::selection {
+            background-color: #BEF264;
+            color: #131f00;
+        }
+    </style>
 </head>
-<body class="overflow-x-hidden bg-surface font-body selection:bg-tertiary selection:text-black">
-  <aside class="fixed left-0 top-0 z-40 hidden h-screen w-64 flex-col border-r border-[#2c2928] bg-[#1d1b1a] py-8 lg:flex">
-    <div class="mb-12 px-6">
-      <div class="mb-4 flex items-center gap-4">
-        <img alt="Ludovic Guenet logo" class="h-10 w-10 object-contain" src="/img/logo.svg" />
-        <div>
-          <div class="font-label text-xs font-black tracking-widest text-[#F7DF1E]">SOFTWARE ARCHITECT</div>
-          <div class="text-[10px] uppercase tracking-widest text-secondary">PHP / LARAVEL / NUXT</div>
+<body class="bg-surface-container-lowest text-on-background font-body selection:bg-primary-container">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-900/10 dark:border-white/10">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full">
+<a class="text-2xl font-black text-zinc-900 dark:text-white tracking-tighter uppercase font-['Inter']" href="#">
+                LUDOVIC GUÉNET
+            </a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#engineering">ENGINEERING</a>
+<a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#content">CONTENT</a>
+<a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#services">SERVICES</a>
+<a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#contact">CONTACT</a>
+<button class="bg-primary-container text-on-primary-fixed px-6 py-2 font-black tracking-tighter uppercase hover:bg-zinc-900 hover:text-primary-container transition-all duration-200 active:scale-95">
+                    GET IN TOUCH
+                </button>
+</div>
+<button class="md:hidden text-zinc-900">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-24">
+<section class="px-6 py-24 md:py-40 max-w-7xl mx-auto" id="engineering">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-8">
+<h1 class="text-6xl md:text-8xl font-black leading-[1.1] tracking-tighter uppercase mb-8">
+                        ENGINEERING <span class="text-primary-container bg-zinc-900 px-4">EXPERTISE</span> FOR LARAVEL SYSTEMS.
+                    </h1>
+<p class="text-xl md:text-2xl text-zinc-500 leading-relaxed max-w-2xl">
+                        Architecting high-performance web environments with mathematical precision. Specializing in technical debt resolution and senior engineering strategies.
+                    </p>
+</div>
+<div class="lg:col-span-4">
+<div class="bg-zinc-900 p-8 shadow-2xl relative">
+<div class="flex gap-2 mb-6">
+<div class="w-3 h-3 bg-red-500"></div>
+<div class="w-3 h-3 bg-yellow-500"></div>
+<div class="w-3 h-3 bg-green-500"></div>
+</div>
+<code class="font-mono text-primary-container text-sm leading-6">
+<span class="text-zinc-500">// Structural Integrity</span><br/>
+<span class="text-white">class</span> Architecture <span class="text-white">{</span><br/>
+&nbsp;&nbsp;<span class="text-white">public function</span> build() <span class="text-white">{</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-white">return</span> Precision::solve(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new LaravelJutsu()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<span class="text-white">}</span><br/>
+<span class="text-white">}</span>
+</code>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low py-32 px-6" id="services">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-4xl font-black tracking-tighter uppercase mb-20 border-l-8 border-primary-container pl-6">MODELS OF ENGAGEMENT</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<div class="bg-surface-container-lowest p-12 border-r border-zinc-200 hover:bg-primary-container group transition-all duration-300">
+<span class="material-symbols-outlined text-4xl mb-8 group-hover:text-zinc-900 text-primary-container" style="font-variation-settings: 'FILL' 1;">strategy</span>
+<h3 class="text-2xl font-black tracking-tighter uppercase mb-4">Strategic Consulting</h3>
+<p class="text-zinc-500 group-hover:text-zinc-900 leading-relaxed">High-level technical roadmapping and ecosystem optimization for scaling startups.</p>
+</div>
+<div class="bg-surface-container-lowest p-12 border-r border-zinc-200 hover:bg-primary-container group transition-all duration-300">
+<span class="material-symbols-outlined text-4xl mb-8 group-hover:text-zinc-900 text-primary-container" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<h3 class="text-2xl font-black tracking-tighter uppercase mb-4">Architecture Audit</h3>
+<p class="text-zinc-500 group-hover:text-zinc-900 leading-relaxed">In-depth code analysis and structural performance evaluation of existing Laravel apps.</p>
+</div>
+<div class="bg-surface-container-lowest p-12 hover:bg-primary-container group transition-all duration-300">
+<span class="material-symbols-outlined text-4xl mb-8 group-hover:text-zinc-900 text-primary-container" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<h3 class="text-2xl font-black tracking-tighter uppercase mb-4">Senior Engineering Support</h3>
+<p class="text-zinc-500 group-hover:text-zinc-900 leading-relaxed">Dedicated leadership without the overhead. Bridging business goals and code reality.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 max-w-7xl mx-auto" id="content">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<h2 class="text-4xl font-black tracking-tighter uppercase mb-4">LARAVEL JUTSU</h2>
+<p class="text-zinc-500 uppercase tracking-widest text-sm">Advanced Technical Education &amp; Mastery</p>
+</div>
+<a class="border-b-2 border-primary-container font-black tracking-tighter uppercase hover:bg-primary-container transition-all px-2" href="https://www.youtube.com/@LaravelJutsu/videos" target="_blank" rel="noreferrer">VIEW CHANNEL</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="youtube-videos">
+<div class="animate-pulse">
+<div class="aspect-video bg-zinc-100 mb-4"></div>
+<div class="h-5 bg-zinc-100 w-5/6"></div>
+</div>
+<div class="animate-pulse">
+<div class="aspect-video bg-zinc-100 mb-4"></div>
+<div class="h-5 bg-zinc-100 w-5/6"></div>
+</div>
+<div class="animate-pulse">
+<div class="aspect-video bg-zinc-100 mb-4"></div>
+<div class="h-5 bg-zinc-100 w-5/6"></div>
+</div>
+<div class="animate-pulse">
+<div class="aspect-video bg-zinc-100 mb-4"></div>
+<div class="h-5 bg-zinc-100 w-5/6"></div>
+</div>
+</div>
+<p class="hidden text-zinc-500 uppercase tracking-widest text-sm mt-8" id="youtube-fallback">Unable to load videos right now.</p>
+</section>
+<section class="bg-zinc-900 py-32 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4">
+<h2 class="text-4xl font-black tracking-tighter uppercase text-white mb-6">LARAVEL FRANCE</h2>
+<p class="text-zinc-400 leading-relaxed mb-8">Latest architectural insights and community updates from the French Laravel ecosystem.</p>
+<div class="h-1 w-20 bg-primary-container"></div>
+</div>
+<div class="lg:col-span-8 flex flex-col gap-12" id="laravel-france-articles">
+<div class="animate-pulse border-b border-zinc-800 pb-8">
+<div class="h-4 bg-zinc-800 w-32 mb-3"></div>
+<div class="h-8 bg-zinc-800 w-5/6"></div>
+</div>
+<div class="animate-pulse border-b border-zinc-800 pb-8">
+<div class="h-4 bg-zinc-800 w-32 mb-3"></div>
+<div class="h-8 bg-zinc-800 w-5/6"></div>
+</div>
+<div class="animate-pulse border-b border-zinc-800 pb-8">
+<div class="h-4 bg-zinc-800 w-32 mb-3"></div>
+<div class="h-8 bg-zinc-800 w-5/6"></div>
+</div>
+</div>
+<p class="hidden text-zinc-400 uppercase tracking-widest text-sm mt-8" id="articles-fallback">Unable to load latest articles right now.</p>
+</div>
+</div>
+</section>
+<section class="py-40 px-6 max-w-3xl mx-auto" id="contact">
+<h2 class="text-6xl font-black tracking-tighter uppercase mb-16 text-center">INITIALIZE CONTACT</h2>
+<form action="https://formspree.io/f/xlgabgqg" class="space-y-12" id="contact-form" method="post">
+<div class="relative">
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-zinc-200 focus:border-primary-container focus:ring-0 px-0 py-4 font-black tracking-tighter uppercase placeholder:text-zinc-300" name="name" placeholder="NAME / ORGANIZATION" required type="text"/>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-zinc-200 focus:border-primary-container focus:ring-0 px-0 py-4 font-black tracking-tighter uppercase placeholder:text-zinc-300" name="email" placeholder="EMAIL ADDRESS" required type="email"/>
+</div>
+<div class="relative">
+<textarea class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-zinc-200 focus:border-primary-container focus:ring-0 px-0 py-4 font-black tracking-tighter uppercase placeholder:text-zinc-300 resize-none" name="message" placeholder="PROJECT PARAMETERS" required rows="4"></textarea>
+</div>
+<input name="_subject" type="hidden" value="New inquiry from ludovicguenet.dev"/>
+<button class="w-full bg-primary-container text-on-primary-fixed py-6 font-black tracking-tighter uppercase text-xl hover:bg-zinc-900 hover:text-primary-container transition-all active:scale-[0.98]" id="contact-submit" type="submit">
+                    INITIALIZE TRANSMISSION
+                </button>
+<p class="hidden text-sm uppercase tracking-widest text-zinc-500" id="form-status"></p>
+</form>
+</section>
+</main>
+<footer class="bg-zinc-900 dark:bg-zinc-950 w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-[#BEF264] font-black tracking-tighter text-xl uppercase">
+            LUDOVIC GUÉNET
         </div>
-      </div>
-    </div>
-    <nav class="flex-1">
-      <div class="space-y-1">
-        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="#hero"><span class="material-symbols-outlined">inventory_2</span>Hero</a>
-        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="#videos"><span class="material-symbols-outlined">live_tv</span>Videos</a>
-        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="#articles"><span class="material-symbols-outlined">article</span>Articles</a>
-        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="#services"><span class="material-symbols-outlined">architecture</span>Services</a>
-        <a class="flex items-center gap-4 px-6 py-4 font-label text-xs uppercase tracking-widest text-[#cdc5c3] transition-all hover:bg-[#2c2928]" href="#contact"><span class="material-symbols-outlined">terminal</span>Contact</a>
-      </div>
-    </nav>
-    <div class="mb-12 space-y-3 px-6 text-[10px] uppercase tracking-widest text-secondary">
-      <a class="block hover:text-tertiary" href="https://github.com/ludoguenet" target="_blank" rel="noreferrer">GitHub</a>
-      <a class="block hover:text-tertiary" href="https://www.linkedin.com/in/ludoguenet" target="_blank" rel="noreferrer">LinkedIn</a>
-    </div>
-  </aside>
-
-  <main class="min-h-screen px-6 py-16 lg:ml-64 lg:px-20">
-    <section class="grid min-h-[88vh] items-center gap-10 lg:grid-cols-12" id="hero">
-      <div class="lg:col-span-7">
-        <p class="mb-6 font-label text-xs uppercase tracking-[0.35em] text-tertiary">ludovicguenet.dev</p>
-        <h1 class="mb-8 font-headline text-6xl font-bold tracking-tight md:text-8xl">Ludovic Guénet</h1>
-        <p class="max-w-3xl text-xl leading-relaxed text-secondary md:text-2xl">
-          Engineering leadership and architecture for high-stakes Laravel platforms. I help teams move from technical noise to durable, explicit systems.
-        </p>
-        <div class="mt-10">
-          <a class="group inline-flex items-center gap-3 border border-outline-variant/40 px-5 py-3 font-label text-[11px] uppercase tracking-[0.2em] text-secondary transition-all hover:border-tertiary hover:text-tertiary" href="#videos">
-            Scroll Down
-            <span class="material-symbols-outlined text-base transition-transform group-hover:translate-y-1">south</span>
-          </a>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] font-regular text-xs uppercase tracking-widest text-zinc-400 hover:text-[#BEF264] transition-colors" href="https://www.youtube.com/@LaravelJutsu/videos" target="_blank" rel="noreferrer">LARAVEL JUTSU</a>
+<a class="font-['Inter'] font-regular text-xs uppercase tracking-widest text-zinc-400 hover:text-[#BEF264] transition-colors" href="https://laravel-france.com/posts" target="_blank" rel="noreferrer">LARAVEL FRANCE</a>
+<a class="font-['Inter'] font-regular text-xs uppercase tracking-widest text-zinc-400 hover:text-[#BEF264] transition-colors" href="#">STRATEGIC CONSULTING</a>
+<a class="font-['Inter'] font-regular text-xs uppercase tracking-widest text-zinc-400 hover:text-[#BEF264] transition-colors" href="#">SENIOR ENGINEERING</a>
+</div>
+<div class="font-['Inter'] font-regular text-xs uppercase tracking-widest text-zinc-500">
+            &copy; <span id="current-year"></span> LUDOVIC GUÉNET. BUILT WITH PRECISION.
         </div>
-      </div>
-      <div class="lg:col-span-5">
-        <div class="w-full max-w-2xl border border-outline-variant/40 bg-surface-container-lowest p-6">
-          <pre class="whitespace-pre-wrap break-words font-mono text-xs leading-relaxed text-[#c6c6c6]"><span class="text-tertiary">namespace</span> Architect\Core;
+</footer>
+<script>
+  const currentYear = document.getElementById("current-year");
+  if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
-<span class="text-tertiary">class</span> Ludovic <span class="text-tertiary">extends</span> Engineer
-{
-    <span class="text-tertiary">public function</span> build(): Artifact
-    {
-        <span class="text-tertiary">return</span> $this-&gt;laravel-&gt;scale([
-            "efficiency" =&gt; 1.0,
-            "elegance"   =&gt; PHP_INT_MAX,
-            "latency"    =&gt; 0
-        ]);
-    }
-}</pre>
-        </div>
-      </div>
-    </section>
+  const youtubeContainer = document.getElementById("youtube-videos");
+  const youtubeFallback = document.getElementById("youtube-fallback");
+  const channelFeed = "https://www.youtube.com/feeds/videos.xml?channel_id=UC36hi0WMeiR8HpUy-A2s4vQ";
+  const youtubeApi = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(channelFeed);
 
-    <section class="border-t border-outline-variant/20 py-20" id="videos">
-      <div class="mb-12 flex items-end justify-between">
-        <h2 class="font-headline text-4xl">Latest Videos</h2>
-        <a class="text-xs uppercase tracking-widest text-tertiary" href="https://www.youtube.com/@LaravelJutsu/videos" target="_blank" rel="noreferrer">@LaravelJutsu</a>
-      </div>
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3" id="youtube-videos">
-        <div class="animate-pulse bg-surface-container-low p-6"><div class="mb-4 aspect-video bg-surface-container-high"></div><div class="h-4 w-5/6 bg-surface-container-high"></div></div>
-        <div class="animate-pulse bg-surface-container-low p-6"><div class="mb-4 aspect-video bg-surface-container-high"></div><div class="h-4 w-5/6 bg-surface-container-high"></div></div>
-        <div class="animate-pulse bg-surface-container-low p-6"><div class="mb-4 aspect-video bg-surface-container-high"></div><div class="h-4 w-5/6 bg-surface-container-high"></div></div>
-      </div>
-      <p class="mt-6 hidden text-xs uppercase tracking-widest text-secondary" id="youtube-fallback">Unable to load videos right now.</p>
-    </section>
-    <div class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 p-4" id="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
-      <div class="w-full max-w-5xl bg-surface-container-low p-4 md:p-6">
-        <div class="mb-4 flex items-center justify-between">
-          <h3 class="font-headline text-2xl text-white" id="video-modal-title">Video</h3>
-          <button class="text-secondary hover:text-tertiary" id="video-modal-close" type="button" aria-label="Close player">
-            <span class="material-symbols-outlined">close</span>
-          </button>
-        </div>
-        <div class="aspect-video w-full bg-black">
-          <iframe id="video-modal-iframe" class="h-full w-full" src="" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-      </div>
-    </div>
-
-    <section class="border-t border-outline-variant/20 py-20" id="articles">
-      <div class="mb-12 flex items-end justify-between">
-        <h2 class="font-headline text-4xl">Latest Articles</h2>
-        <a class="text-xs uppercase tracking-widest text-tertiary" href="https://laravel-france.com/posts" target="_blank" rel="noreferrer">Laravel France</a>
-      </div>
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2" id="laravel-france-articles">
-        <div class="animate-pulse bg-surface-container-high p-6"><div class="mb-4 h-3 w-24 bg-surface-container-highest"></div><div class="mb-2 h-6 w-5/6 bg-surface-container-highest"></div><div class="h-4 w-full bg-surface-container-highest"></div></div>
-        <div class="animate-pulse bg-surface-container-high p-6"><div class="mb-4 h-3 w-24 bg-surface-container-highest"></div><div class="mb-2 h-6 w-5/6 bg-surface-container-highest"></div><div class="h-4 w-full bg-surface-container-highest"></div></div>
-      </div>
-      <p class="mt-6 hidden text-xs uppercase tracking-widest text-secondary" id="articles-fallback">Unable to load latest posts right now.</p>
-    </section>
-
-    <section class="border-t border-outline-variant/20 py-20" id="services">
-      <h2 class="mb-12 font-headline text-4xl">Service Models</h2>
-      <div class="grid grid-cols-1 gap-1 md:grid-cols-3">
-        <article class="bg-surface-container-low p-8">
-          <h3 class="mb-3 font-headline text-2xl">Strategic Consulting</h3>
-          <p class="text-secondary">Architecture roadmaps, stack decisions, and engineering scaling strategies.</p>
-        </article>
-        <article class="bg-surface-container-high p-8">
-          <h3 class="mb-3 font-headline text-2xl">Architecture Audit</h3>
-          <p class="text-secondary">Deep technical review for bottlenecks, debt, reliability risks, and delivery constraints.</p>
-        </article>
-        <article class="bg-surface-container-low p-8">
-          <h3 class="mb-3 font-headline text-2xl">Fractional CTO</h3>
-          <p class="text-secondary">Hands-on leadership to shape team practices and a production-ready technical foundation.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="border-t border-outline-variant/20 py-20" id="contact">
-      <h2 class="mb-10 font-headline text-4xl">Contact</h2>
-      <form action="https://formspree.io/f/xlgabgqg" id="contact-form" method="post" class="max-w-3xl space-y-8 bg-surface-container-low p-8">
-        <input name="name" required type="text" placeholder="NAME / ENTITY" class="w-full border-b border-outline-variant bg-transparent py-3 uppercase tracking-widest placeholder:text-[#55514f] focus:border-tertiary focus:ring-0" />
-        <input name="email" required type="email" placeholder="EMAIL ADDRESS" class="w-full border-b border-outline-variant bg-transparent py-3 uppercase tracking-widest placeholder:text-[#55514f] focus:border-tertiary focus:ring-0" />
-        <textarea name="message" required rows="4" placeholder="DESCRIBE YOUR PROJECT" class="w-full border-b border-outline-variant bg-transparent py-3 uppercase tracking-widest placeholder:text-[#55514f] focus:border-tertiary focus:ring-0"></textarea>
-        <input name="_subject" type="hidden" value="New inquiry from ludovicguenet.dev" />
-        <button id="contact-submit" type="submit" class="bg-tertiary px-10 py-4 text-sm font-bold uppercase tracking-widest text-black">Initialize Transmission</button>
-        <p id="form-status" class="hidden text-xs uppercase tracking-widest text-secondary"></p>
-      </form>
-    </section>
-  </main>
-
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", (event) => {
-        const target = document.querySelector(anchor.getAttribute("href"));
-        if (!target) return;
-        event.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+  fetch(youtubeApi)
+    .then((response) => response.json())
+    .then((data) => {
+      if (!youtubeContainer || !data.items || !data.items.length) throw new Error("No videos");
+      youtubeContainer.innerHTML = data.items.slice(0, 4).map((item) => {
+        const safeTitle = (item.title || "Laravel Jutsu Video").replace(/"/g, "&quot;");
+        const thumb = item.thumbnail || "";
+        const link = item.link || "https://www.youtube.com/@LaravelJutsu/videos";
+        return `
+          <article class="group">
+            <a class="block" href="${link}" target="_blank" rel="noreferrer">
+              <div class="aspect-video bg-zinc-100 mb-4 overflow-hidden outline outline-1 outline-zinc-200 group-hover:outline-zinc-900 transition-all">
+                <img class="w-full h-full object-cover" src="${thumb}" alt="${safeTitle}" loading="lazy"/>
+              </div>
+              <h4 class="font-bold tracking-tight text-lg leading-snug group-hover:text-zinc-600 transition-colors [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">${item.title || "Untitled Video"}</h4>
+            </a>
+          </article>
+        `;
+      }).join("");
+    })
+    .catch(() => {
+      if (youtubeFallback) youtubeFallback.classList.remove("hidden");
+      if (youtubeContainer) youtubeContainer.innerHTML = "";
     });
 
-    const videosContainer = document.getElementById("youtube-videos");
-    const videosFallback = document.getElementById("youtube-fallback");
-    const channelFeed = "https://www.youtube.com/feeds/videos.xml?channel_id=UC36hi0WMeiR8HpUy-A2s4vQ";
-    const videosApi = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(channelFeed);
+  const articlesContainer = document.getElementById("laravel-france-articles");
+  const articlesFallback = document.getElementById("articles-fallback");
+  const articlesSource = "https://laravel-france.com/posts";
+  const articlesApi = "https://api.allorigins.win/raw?url=" + encodeURIComponent(articlesSource);
 
-    fetch(videosApi)
-      .then((res) => res.json())
-      .then((data) => {
-        if (!videosContainer || !data.items?.length) throw new Error();
-        videosContainer.innerHTML = data.items.slice(0, 6).map((item) => `
-          <article class="group bg-surface-container-low p-6">
-            <button class="video-card w-full text-left" data-title="${item.title.replace(/"/g, "&quot;")}" data-link="${item.link}" type="button">
-              <img src="${item.thumbnail || "/img/logo.svg"}" alt="${item.title}" class="mb-4 aspect-video w-full object-cover" />
-              <h3 class="font-headline text-2xl group-hover:text-tertiary">${item.title}</h3>
-            </button>
-          </article>
-        `).join("");
+  fetch(articlesApi)
+    .then((response) => response.text())
+    .then((html) => {
+      if (!articlesContainer) throw new Error("Missing container");
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      const links = [...doc.querySelectorAll('a[href*="/posts/"]')];
+      const seen = new Set();
+      const posts = [];
+      const emojiRegex = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu;
+      const frenchMonths = {
+        janvier: "Jan",
+        fevrier: "Feb",
+        "février": "Feb",
+        mars: "Mar",
+        avril: "Apr",
+        mai: "May",
+        juin: "Jun",
+        juillet: "Jul",
+        aout: "Aug",
+        "août": "Aug",
+        septembre: "Sep",
+        octobre: "Oct",
+        novembre: "Nov",
+        decembre: "Dec",
+        "décembre": "Dec"
+      };
 
-        const modal = document.getElementById("video-modal");
-        const modalClose = document.getElementById("video-modal-close");
-        const modalTitle = document.getElementById("video-modal-title");
-        const modalIframe = document.getElementById("video-modal-iframe");
+      const cleanTitle = (rawText) => {
+        const text = (rawText || "")
+          .replace(emojiRegex, "")
+          .replace(/\bhttps?:\/\/\S+/gi, "")
+          .replace(/\s+/g, " ")
+          .trim();
 
-        const closeModal = () => {
-          if (!modal || !modalIframe) return;
-          modal.classList.add("hidden");
-          modal.classList.remove("flex");
-          modalIframe.src = "";
-        };
+        const withoutCounters = text.replace(/\b\d+\s*(comments?|reactions?|likes?)\b/gi, "").trim();
+        const words = withoutCounters.split(" ").filter(Boolean).slice(0, 14);
+        const compact = words.join(" ");
+        return compact.length > 96 ? `${compact.slice(0, 93).trim()}...` : compact;
+      };
 
-        const getVideoId = (url) => {
-          const parsed = new URL(url);
-          if (parsed.hostname.includes("youtu.be")) return parsed.pathname.slice(1);
-          if (parsed.searchParams.get("v")) return parsed.searchParams.get("v");
-          const parts = parsed.pathname.split("/");
-          const embedIdx = parts.findIndex((p) => p === "embed");
-          return embedIdx !== -1 ? parts[embedIdx + 1] : "";
-        };
+      const extractReactions = (rawText) => {
+        const text = (rawText || "").replace(/\s+/g, " ").trim();
+        const allowedIcons = ["👍", "❤️", "🔥", "👏", "🎉", "🚀"];
+        const counters = [];
+        const escapedIcons = allowedIcons.map((icon) => icon.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
+        const patterns = [
+          new RegExp(`(\\d+)\\s*(${escapedIcons})`, "g"),
+          new RegExp(`(${escapedIcons})\\s*(\\d+)`, "g")
+        ];
 
-        document.querySelectorAll(".video-card").forEach((card) => {
-          card.addEventListener("click", () => {
-            const link = card.getAttribute("data-link");
-            const title = card.getAttribute("data-title") || "Video";
-            if (!link || !modal || !modalTitle || !modalIframe) return;
-            const id = getVideoId(link);
-            if (!id) return;
-            modalTitle.textContent = title;
-            modalIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
-            modal.classList.remove("hidden");
-            modal.classList.add("flex");
-          });
+        for (const pattern of patterns) {
+          let match;
+          while ((match = pattern.exec(text)) !== null) {
+            const value = match[1].match(/^\d+$/) ? match[1] : match[2];
+            const icon = match[1].match(/^\d+$/) ? match[2] : match[1];
+            if (allowedIcons.includes(icon)) counters.push(`${icon} ${value}`);
+          }
+        }
+
+        const uniqueCounters = [...new Set(counters)];
+        if (uniqueCounters.length) return { counterText: uniqueCounters.join("  "), emojiText: "" };
+
+        const emojis = (text.match(emojiRegex) || [])
+          .map((char) => char.replace(/[\uFE0E\uFE0F]/g, ""))
+          .filter((char) => allowedIcons.includes(char));
+        const uniqueEmojis = [...new Set(emojis)];
+        return { counterText: "", emojiText: uniqueEmojis.join(" ") };
+      };
+
+      const extractDateLabel = (element) => {
+        const scopes = [
+          element,
+          element.closest("article"),
+          element.closest("li"),
+          element.closest("div")
+        ].filter(Boolean);
+
+        for (const scope of scopes) {
+          const timeEl = scope.querySelector("time");
+          if (timeEl) {
+            const fromDateTime = (timeEl.getAttribute("datetime") || "").trim();
+            const fromText = (timeEl.textContent || "").trim();
+            if (fromDateTime) return fromDateTime.slice(0, 10);
+            if (fromText) return fromText;
+          }
+
+          const blob = (scope.textContent || "").replace(/\s+/g, " ").trim();
+          const match = blob.match(/(\d{1,2})\s+(janvier|fevrier|février|mars|avril|mai|juin|juillet|aout|août|septembre|octobre|novembre|decembre|décembre)\s+(\d{4})/i);
+          if (match) {
+            const day = match[1].padStart(2, "0");
+            const month = frenchMonths[match[2].toLowerCase()] || "N/A";
+            return `${day} ${month} ${match[3]}`;
+          }
+        }
+
+        return "Latest";
+      };
+
+      for (const link of links) {
+        if (!link.href || seen.has(link.href)) continue;
+        const url = new URL(link.href);
+        const pathParts = url.pathname.split("/").filter(Boolean);
+        if (pathParts.length < 2 || pathParts[0] !== "posts") continue;
+
+        const rawText = link.textContent || "";
+        const title = cleanTitle(rawText);
+        if (!title || title.length < 10) continue;
+        const dateLabel = extractDateLabel(link);
+        const reactions = extractReactions(rawText);
+
+        seen.add(link.href);
+        posts.push({ href: link.href, title, dateLabel, reactions });
+        if (posts.length === 3) break;
+      }
+
+      if (!posts.length) throw new Error("No articles");
+      articlesContainer.innerHTML = posts.map((post, index) => `
+        <a class="flex justify-between items-start group border-b border-zinc-800 pb-8 hover:border-primary-container transition-colors" href="${post.href}" target="_blank" rel="noreferrer">
+          <div>
+            <div class="mb-2 flex items-center gap-3">
+              <span class="text-primary-container font-mono text-sm block tracking-widest uppercase">Article / ${post.dateLabel}</span>
+              ${post.reactions.counterText ? `<span class="text-xs text-zinc-300 tracking-wide">${post.reactions.counterText}</span>` : ""}
+              ${!post.reactions.counterText && post.reactions.emojiText ? `<span class="text-xs text-zinc-400 tracking-wide">${post.reactions.emojiText}</span>` : ""}
+            </div>
+            <h4 class="text-xl md:text-2xl font-bold tracking-tight text-white leading-snug group-hover:text-primary-container transition-colors [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">${post.title}</h4>
+          </div>
+          <span class="material-symbols-outlined text-primary-container">arrow_outward</span>
+        </a>
+      `).join("");
+    })
+    .catch(() => {
+      if (articlesFallback) articlesFallback.classList.remove("hidden");
+      if (articlesContainer) articlesContainer.innerHTML = "";
+    });
+
+  const contactForm = document.getElementById("contact-form");
+  const submitButton = document.getElementById("contact-submit");
+  const formStatus = document.getElementById("form-status");
+
+  if (contactForm && submitButton && formStatus) {
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      submitButton.disabled = true;
+      submitButton.textContent = "TRANSMITTING...";
+      formStatus.classList.remove("hidden");
+      formStatus.textContent = "Transmission in progress...";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
         });
 
-        if (modalClose) modalClose.addEventListener("click", closeModal);
-        if (modal) {
-          modal.addEventListener("click", (event) => {
-            if (event.target === modal) closeModal();
-          });
-          window.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") closeModal();
-          });
-        }
-      })
-      .catch(() => {
-        if (videosFallback) videosFallback.classList.remove("hidden");
-        if (videosContainer) videosContainer.innerHTML = "";
-      });
-
-    const articlesContainer = document.getElementById("laravel-france-articles");
-    const articlesFallback = document.getElementById("articles-fallback");
-    const postsUrl = "https://laravel-france.com/posts";
-    const articlesApi = "https://api.allorigins.win/raw?url=" + encodeURIComponent(postsUrl);
-
-    fetch(articlesApi)
-      .then((res) => res.text())
-      .then((html) => {
-        if (!articlesContainer) return;
-        const doc = new DOMParser().parseFromString(html, "text/html");
-        const links = [...doc.querySelectorAll('a[href*="/posts/"]')];
-        const seen = new Set();
-        const entries = [];
-        for (const link of links) {
-          if (!link.href || seen.has(link.href)) continue;
-          seen.add(link.href);
-          const text = (link.textContent || "").trim().replace(/\s+/g, " ");
-          entries.push({ href: link.href, text });
-          if (entries.length >= 6) break;
-        }
-        if (!entries.length) throw new Error();
-
-        const emojiRegex = /[\u{1F300}-\u{1FAFF}]/gu;
-        const dateRegex = /^\d{1,2}\s+\w+\s+\d{4}/;
-
-        const cards = entries.map((entry) => {
-          const reactions = (entry.text.match(emojiRegex) || []).slice(0, 4).join(" ");
-          const dateMatch = entry.text.match(dateRegex);
-          const date = dateMatch ? dateMatch[0] : "Laravel France";
-          const cleaned = dateMatch ? entry.text.replace(dateMatch[0], "").trim() : entry.text.trim();
-          const words = cleaned.split(" ").filter(Boolean);
-          const title = words.slice(0, 14).join(" ");
-          const excerpt = words.slice(14, 30).join(" ") || "Read the full article on Laravel France.";
-
-          return `
-            <article class="group bg-surface-container-high p-6">
-              <a href="${entry.href}" target="_blank" rel="noreferrer">
-                <div class="mb-4 flex items-center justify-between">
-                  <p class="font-label text-[10px] uppercase tracking-[0.2em] text-tertiary">${date}</p>
-                  ${reactions ? `<span class="font-label text-sm tracking-wider text-secondary">${reactions}</span>` : ""}
-                </div>
-                <h3 class="mb-3 font-headline text-2xl leading-tight transition-colors group-hover:text-tertiary">${title}</h3>
-                <p class="text-sm leading-relaxed text-secondary">${excerpt}</p>
-              </a>
-            </article>
-          `;
-        });
-
-        articlesContainer.innerHTML = cards.join("");
-      })
-      .catch(() => {
-        if (articlesFallback) articlesFallback.classList.remove("hidden");
-        if (articlesContainer) articlesContainer.innerHTML = "";
-      });
-
-    const contactForm = document.getElementById("contact-form");
-    const submitButton = document.getElementById("contact-submit");
-    const formStatus = document.getElementById("form-status");
-    if (contactForm && submitButton && formStatus) {
-      contactForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        submitButton.disabled = true;
-        submitButton.textContent = "Transmitting...";
-        formStatus.classList.remove("hidden");
-        formStatus.textContent = "Transmission in progress...";
-        try {
-          const response = await fetch(contactForm.action, { method: "POST", body: new FormData(contactForm), headers: { Accept: "application/json" } });
-          if (!response.ok) throw new Error();
-          contactForm.reset();
-          formStatus.textContent = "Transmission successful. Response window: 24-48h.";
-        } catch {
-          formStatus.textContent = "Transmission failed. Please retry.";
-        } finally {
-          submitButton.disabled = false;
-          submitButton.textContent = "Initialize Transmission";
-        }
-      });
-    }
-  </script>
+        if (!response.ok) throw new Error("Form submit failed");
+        contactForm.reset();
+        formStatus.textContent = "Transmission successful. Response window: 24-48h.";
+      } catch {
+        formStatus.textContent = "Transmission failed. Please retry.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "INITIALIZE TRANSMISSION";
+      }
+    });
+  }
+</script>
 </body>
 </html>

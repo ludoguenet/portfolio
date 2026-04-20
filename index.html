@@ -96,14 +96,21 @@
 <a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#engineering">ENGINEERING</a>
 <a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#content">CONTENT</a>
 <a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#services">SERVICES</a>
-<a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#contact">CONTACT</a>
-<button class="bg-primary-container text-on-primary-fixed px-6 py-2 font-black tracking-tighter uppercase hover:bg-zinc-900 hover:text-primary-container transition-all duration-200 active:scale-95">
+<a class="bg-primary-container text-on-primary-fixed px-6 py-2 font-black tracking-tighter uppercase hover:bg-zinc-900 hover:text-primary-container transition-all duration-200 active:scale-95" href="#contact" id="desktop-contact-cta">
                     GET IN TOUCH
-                </button>
+                </a>
 </div>
-<button class="md:hidden text-zinc-900">
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-zinc-900" id="menu-toggle" type="button">
 <span class="material-symbols-outlined">menu</span>
 </button>
+</div>
+<div class="hidden md:hidden border-t border-zinc-900/10 dark:border-white/10 bg-white/95 dark:bg-zinc-950/95 px-6 py-6" id="mobile-menu">
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#engineering">ENGINEERING</a>
+<a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#content">CONTENT</a>
+<a class="font-['Inter'] font-black tracking-tighter uppercase text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors" href="#services">SERVICES</a>
+<a class="bg-primary-container text-on-primary-fixed px-6 py-3 font-black tracking-tighter uppercase hover:bg-zinc-900 hover:text-primary-container transition-all duration-200 text-center" href="#contact" id="mobile-contact-cta">GET IN TOUCH</a>
+</div>
 </div>
 </nav>
 <main class="pt-24">
@@ -425,6 +432,46 @@
   const contactForm = document.getElementById("contact-form");
   const submitButton = document.getElementById("contact-submit");
   const formStatus = document.getElementById("form-status");
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = menuToggle ? menuToggle.querySelector(".material-symbols-outlined") : null;
+  const mobileLinks = mobileMenu ? [...mobileMenu.querySelectorAll("a[href^='#']")] : [];
+  const contactCtas = [
+    document.getElementById("desktop-contact-cta"),
+    document.getElementById("mobile-contact-cta")
+  ].filter(Boolean);
+
+  if (menuToggle && mobileMenu) {
+    const setMenuState = (open) => {
+      mobileMenu.classList.toggle("hidden", !open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+      if (menuIcon) menuIcon.textContent = open ? "close" : "menu";
+    };
+
+    setMenuState(false);
+    menuToggle.addEventListener("click", () => {
+      setMenuState(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => setMenuState(false));
+    });
+  }
+
+  contactCtas.forEach((cta) => {
+    cta.addEventListener("click", (event) => {
+      event.preventDefault();
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      if (menuToggle && mobileMenu && menuToggle.getAttribute("aria-expanded") === "true") {
+        mobileMenu.classList.add("hidden");
+        menuToggle.setAttribute("aria-expanded", "false");
+        if (menuIcon) menuIcon.textContent = "menu";
+      }
+    });
+  });
 
   if (contactForm && submitButton && formStatus) {
     contactForm.addEventListener("submit", async (event) => {
